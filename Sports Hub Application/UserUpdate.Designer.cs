@@ -103,7 +103,7 @@
             this.usersDataGridView.Name = "usersDataGridView";
             this.usersDataGridView.Size = new System.Drawing.Size(821, 353);
             this.usersDataGridView.TabIndex = 33;
-            this.usersDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataGridView_CellContentClick);
+           // this.usersDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersDataGridView_CellContentClick);
             // 
             // updatetransbtn
             // 

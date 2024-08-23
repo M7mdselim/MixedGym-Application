@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using ComponentFactory.Krypton.Toolkit;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 
 namespace Mixed_Gym_Application
@@ -23,10 +24,15 @@ namespace Mixed_Gym_Application
         private float _initialFormWidth;
         private float _initialFormHeight;
         private ControlInfo[] _controlsInfo;
+        private string _username;
 
 
-        public SignUp()
+          
+
+
+            public SignUp(string username)
         {
+            _username = username;
             InitializeComponent();
             ConnectionString = DatabaseConfig.connectionString;
             this.AcceptButton = signupbtn; // Set the AcceptButton property
@@ -212,6 +218,14 @@ namespace Mixed_Gym_Application
         private void SignUp_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void homebackbtn_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Home home = new Home(_username);
+            home.ShowDialog();
+            this.Close();
         }
     }
 }

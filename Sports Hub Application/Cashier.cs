@@ -659,8 +659,8 @@ namespace Mixed_Gym_Application
                     }
 
                     // Define folder path
-                     string folderPath = @"\\192.168.50.5\e\Daily Backup\MixedGymScreenshots";
-                   // string folderPath = @"F:\New folder";
+                    string folderPath = @"\\192.168.50.5\e\Daily Backup\MixedGymScreenshots";
+                    //string folderPath = @"F:\New folder";
                     // F:\New folder
                     // Create directory if it doesn't exist
                     if (!Directory.Exists(folderPath))
@@ -739,17 +739,80 @@ namespace Mixed_Gym_Application
 
 
 
-
         private async Task<int> SaveUserAsync(string name, string mobileNumber, string category, string id, Image profileImage, byte[] pdfFile, SqlConnection connection)
         {
-            string query = "INSERT INTO Users (Name, MobileNumber, Category, ID, ProfileImage, DateUpdated) OUTPUT INSERTED.UserID VALUES (@Name, @MobileNumber, @Category, @ID, @ProfileImage, @DateUpdated)";
+            // Check if a user with the same details already exists (excluding DateUpdated)
+            string checkUserQuery = @"
+        SELECT UserID, Name, MobileNumber, Category, ID, ProfileImage
+        FROM Users 
+        WHERE Name = @Name 
+          AND MobileNumber = @MobileNumber 
+          AND Category = @Category 
+          AND ID = @ID 
+          AND ProfileImage = @ProfileImage";
 
-            using (SqlCommand command = new SqlCommand(query, connection))
+            using (SqlCommand checkCommand = new SqlCommand(checkUserQuery, connection))
+            {
+                checkCommand.Parameters.AddWithValue("@Name", name);
+                checkCommand.Parameters.AddWithValue("@MobileNumber", mobileNumber);
+                checkCommand.Parameters.AddWithValue("@Category", category);
+                checkCommand.Parameters.AddWithValue("@ID", id);
+
+                // Set the ProfileImage parameter
+                if (profileImage != null)
+                {
+                    checkCommand.Parameters.Add("@ProfileImage", SqlDbType.VarBinary, -1).Value = GetImageBytes(profileImage);
+                }
+                else
+                {
+                    checkCommand.Parameters.Add("@ProfileImage", SqlDbType.VarBinary, -1).Value = DBNull.Value;
+                }
+
+                using (SqlDataReader reader = await checkCommand.ExecuteReaderAsync())
+                {
+                    if (reader.Read())
+                    {
+                        // Existing user found
+                        int userId = reader.GetInt32(0);
+                        string existingName = reader.GetString(1);
+                        string existingMobileNumber = reader.GetString(2);
+                        string existingCategory = reader.GetString(3);
+                        string existingID = reader.GetString(4);
+                        byte[] existingProfileImage = reader.IsDBNull(5) ? null : (byte[])reader[5];
+
+                        // Check if any of the provided values are different
+                        if (name != existingName || mobileNumber != existingMobileNumber ||
+                            category != existingCategory || id != existingID ||
+                            !Equals(GetImageBytes(profileImage), existingProfileImage))
+                        {
+                            // Values changed, insert new user
+                            return await InsertNewUserAsync(name, mobileNumber, category, id, profileImage, pdfFile, connection);
+                        }
+                        else
+                        {
+                            // No change, return existing UserID
+                            return userId;
+                        }
+                    }
+                }
+            }
+
+            // If no user exists, insert new user
+            return await InsertNewUserAsync(name, mobileNumber, category, id, profileImage, pdfFile, connection);
+        }
+
+        private async Task<int> InsertNewUserAsync(string name, string mobileNumber, string category, string id, Image profileImage, byte[] pdfFile, SqlConnection connection)
+        {
+            string insertQuery = @"
+        INSERT INTO Users (Name, MobileNumber, Category, ID, ProfileImage, DateUpdated) 
+        OUTPUT INSERTED.UserID 
+        VALUES (@Name, @MobileNumber, @Category, @ID, @ProfileImage, @DateUpdated)";
+
+            using (SqlCommand command = new SqlCommand(insertQuery, connection))
             {
                 DateTime serverDateTime = await GetServerDateTimeAsync(connection);
 
                 command.Parameters.AddWithValue("@Name", name);
-               
                 command.Parameters.AddWithValue("@MobileNumber", mobileNumber);
                 command.Parameters.AddWithValue("@Category", category);
                 command.Parameters.AddWithValue("@ID", id);
@@ -775,13 +838,35 @@ namespace Mixed_Gym_Application
                     command.Parameters.Add("@PDFFile", SqlDbType.VarBinary, -1).Value = DBNull.Value;
                 }
 
-                return (int)await command.ExecuteScalarAsync();
+                return (int)await command.ExecuteScalarAsync(); // Return the new UserID
             }
-
-
-
-
         }
+
+        // Helper method to convert Image to byte[]
+        private byte[] GetImageBytes(Image image)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                image.Save(ms, image.RawFormat);
+                return ms.ToArray();
+            }
+        }
+
+        // Helper method to compare byte arrays
+        private bool Equals(byte[] a, byte[] b)
+        {
+            if (a == null && b == null) return true;
+            if (a == null || b == null) return false;
+            if (a.Length != b.Length) return false;
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] != b[i]) return false;
+            }
+            return true;
+        }
+
+
+
 
         // Helper method to convert Image to byte array
         //private byte[] GetImageBytes(Image image)
@@ -845,26 +930,7 @@ namespace Mixed_Gym_Application
 
 
 
-        private byte[] GetImageBytes(Image image)
-        {
-            if (image == null)
-                return null;
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                ImageCodecInfo encoder = GetEncoder(image.RawFormat);
-                if (encoder == null)
-                {
-                    encoder = GetEncoder(ImageFormat.Png); // Default to PNG if no encoder found
-                }
-
-                EncoderParameters encoderParameters = new EncoderParameters(1);
-                encoderParameters.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, 100L);
-
-                image.Save(ms, encoder, encoderParameters);
-                return ms.ToArray();
-            }
-        }
+      
 
 
         private async Task<int?> GetExistingUserIDAsync(string name,
@@ -1561,7 +1627,7 @@ namespace Mixed_Gym_Application
                 backbtn.Visible = false;
                 exportimgbtn.Visible = false;
                 applyDiscountButton.Visible = false;
-                updateuserbtn.Visible = false;
+                
 
             }
             else if (roleID == 2)
@@ -1570,7 +1636,7 @@ namespace Mixed_Gym_Application
                 backbtn.Visible = false;
                 exportimgbtn.Visible = false;
                 applyDiscountButton.Visible = true;
-                updateuserbtn.Visible = false;
+               
             }
               else if (roleID == 3)
             {
@@ -1578,7 +1644,7 @@ namespace Mixed_Gym_Application
                 backbtn.Visible = true;
                 exportimgbtn.Visible = false;
                 applyDiscountButton.Visible = true;
-                updateuserbtn.Visible = true;
+               
             }
             else if (roleID == 4)
             {
@@ -1586,7 +1652,7 @@ namespace Mixed_Gym_Application
                 backbtn.Visible = true;
                 exportimgbtn.Visible = true;
                 applyDiscountButton.Visible = true;
-                updateuserbtn.Visible = true;
+                
             }
         }
 

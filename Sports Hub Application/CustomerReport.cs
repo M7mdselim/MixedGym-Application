@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
 using DocumentFormat.OpenXml.Office2010.Excel;
+using System.Diagnostics;
 
 namespace Mixed_Gym_Application
 {
@@ -103,15 +104,66 @@ namespace Mixed_Gym_Application
             await LoadCustomerTransactionsAsync(customerName);
         }
 
-        private async Task SearchUserByNameAsync(string customerName)
+        private string NormalizeArabicText(string text)
         {
-            string query = "SELECT TOP 1 ID, Name, Category, MobileNumber, ProfileImage FROM Users WHERE Name = @CustomerName";
+            if (string.IsNullOrWhiteSpace(text))
+                return text;
+
+            return text
+                .Replace('أ', 'ا')  // Normalize 'أ' to 'ا'
+                .Replace('إ', 'ا')  // Normalize 'إ' to 'ا'
+                .Replace('آ', 'ا')  // Normalize 'آ' to 'ا'
+                .Replace('ى', 'ي')  // Normalize 'ى' to 'ي'
+                .Replace('ئ', 'ي')  // Normalize 'ئ' to 'ي'
+                .Replace('ة', 'ه')  // Normalize 'ة' to 'ه'
+                .Replace('ؤ', 'و'); // Normalize 'ؤ' to 'و'
+        }
+
+
+        private string ReverseNormalizeArabicText(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return text; // Return input as is if it's null or empty
+
+            // Perform reverse normalization
+            return text
+                .Replace('ا', 'أ')  // Reverse normalize 'ا' to 'أ'
+                .Replace('ا', 'إ')  // Reverse normalize 'ا' to 'إ'
+                .Replace('ا', 'آ')  // Reverse normalize 'ا' to 'آ'
+                .Replace('ي', 'ى')  // Reverse normalize 'ي' to 'ى'
+                .Replace('ي', 'ئ')  // Reverse normalize 'ي' to 'ئ'
+                .Replace('ه', 'ة')  // Reverse normalize 'ه' to 'ة'
+                .Replace('و', 'ؤ'); // Reverse normalize 'و' to 'ؤ'
+        }
+
+
+        private async Task SearchUserByNameAsync(string name)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                ResetUserFields();
+                return;
+            }
+
+            // Normalize the input name
+            string normalizedInput = NormalizeArabicText(name);
+            Debug.WriteLine($"Normalized Input: {normalizedInput}");
+
+            string query = @"
+SELECT TOP 1 ID, Name, Category, MobileNumber, ProfileImage 
+FROM Users 
+WHERE dbo.NormalizeArabicText(Name) LIKE '%' + dbo.NormalizeArabicText(@Name) + '%'
+ORDER BY DateUpdated DESC";
 
             using (SqlConnection connection = new SqlConnection(DatabaseConfig.connectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@CustomerName", customerName);
+                    // Pass the normalized input to the query
+                    command.Parameters.AddWithValue("@Name", normalizedInput);
+
+                    Debug.WriteLine($"Query: {query}");
+                    Debug.WriteLine($"Parameter @Name: {normalizedInput}");
 
                     try
                     {
@@ -121,10 +173,28 @@ namespace Mixed_Gym_Application
                             if (await reader.ReadAsync())
                             {
                                 // Populate fields with user data
-                                membershipIDtxt.Text = reader.GetString(0); // ID
-                                nametxt.Text = reader.GetString(1); // Name
-                                Categorytxt.Text = reader.GetString(2); // Category
-                                phonenumbertxt.Text = reader.GetString(3); // MobileNumber
+                                string id = reader["ID"]?.ToString() ?? "N/A";
+                                string nameValue = reader["Name"]?.ToString() ?? "N/A";
+                                string category = reader["Category"]?.ToString() ?? "N/A";
+                                string mobileNumber = reader["MobileNumber"]?.ToString() ?? "N/A";
+
+                                if (InvokeRequired)
+                                {
+                                    Invoke(new Action(() =>
+                                    {
+                                        membershipIDtxt.Text = id;
+                                        nametxt.Text = nameValue;
+                                        Categorytxt.Text = category;
+                                        phonenumbertxt.Text = mobileNumber;
+                                    }));
+                                }
+                                else
+                                {
+                                    membershipIDtxt.Text = id;
+                                    nametxt.Text = nameValue;
+                                    Categorytxt.Text = category;
+                                    phonenumbertxt.Text = mobileNumber;
+                                }
 
                                 byte[] imageData = reader["ProfileImage"] as byte[];
                                 if (imageData != null)
@@ -149,25 +219,32 @@ namespace Mixed_Gym_Application
 
                                 // Set fields to read-only
                                 membershipIDtxt.ReadOnly = true;
-                                
+
                                 Categorytxt.ReadOnly = true;
                                 phonenumbertxt.ReadOnly = true;
                                 profileimg.Enabled = false;
                             }
                             else
                             {
-                                // Reset fields if no user is found
+                                Debug.WriteLine("No user found with the given name.");
                                 ResetUserFields();
                             }
                         }
                     }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("A SQL error occurred: " + ex.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Debug.WriteLine($"SQL Exception: {ex.Message}");
+                    }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("An error occurred while searching for the user: " + ex.Message);
+                        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Debug.WriteLine($"Exception: {ex.Message}");
                     }
                 }
             }
         }
+
 
         private void ResetUserFields()
         {

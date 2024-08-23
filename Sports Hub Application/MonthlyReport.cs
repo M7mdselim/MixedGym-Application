@@ -353,7 +353,7 @@ namespace Mixed_Gym_Application
             rowsPerPage = (int)((e.MarginBounds.Height - e.MarginBounds.Top) / (transactionsGridView.RowTemplate.Height + 5)); // Adjust spacing as needed
 
             // Print header with title and date on each page
-            string headerTitle = "Monthly Report";
+            string headerTitle = "تقرير شهري";
             string headerDate = datePicker.Value.ToString("MMMM yyyy");  // Format the date as needed
             e.Graphics.DrawString(headerTitle, new Font("Arial", 16, FontStyle.Bold), Brushes.Black, e.MarginBounds.Left, e.MarginBounds.Top);
             e.Graphics.DrawString(headerDate, new Font("Arial", 12), Brushes.Black, e.MarginBounds.Left, e.MarginBounds.Top + 30);  // Add some space below the title

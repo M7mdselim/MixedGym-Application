@@ -54,6 +54,35 @@ namespace Mixed_Gym_Application
             usersDataGridView.CellValueChanged += usersDataGridView_CellValueChanged;
             nametxt.Leave += nametxt_Leave;
             ConfigureNameAutoComplete();
+
+
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "deleteColumn";
+            deleteButtonColumn.HeaderText = "";
+            deleteButtonColumn.Text = "مسح";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            usersDataGridView.Columns.Insert(0, deleteButtonColumn);
+
+
+
+        }
+
+
+        private void usersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && usersDataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                // Ask for confirmation
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this user?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    // Remove the row from the DataGridView
+                    usersDataGridView.Rows.RemoveAt(e.RowIndex);
+
+                    // Save changes to the database
+                    UpdateData();
+                }
+            }
         }
 
 
@@ -488,15 +517,7 @@ namespace Mixed_Gym_Application
 
 
 
-        private void usersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Handle cell content click event here
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                DataGridViewCell cell = usersDataGridView[e.ColumnIndex, e.RowIndex];
-
-            }
-        }
+      
 
 
         private void usersDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

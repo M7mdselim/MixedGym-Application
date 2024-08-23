@@ -24,7 +24,7 @@ public static class DatabaseConfig
                 string password = lines[2];
               //connectionString = $"Data Source=DESKTOP-64N23O5;Initial Catalog=MixedGymDB;Integrated Security=True;Encrypt=False";
                 
-                connectionString = $"Data Source={serverName};Initial Catalog=MixedGymDB;User Id={username};Password={password};Encrypt=False";
+              connectionString = $"Data Source={serverName};Initial Catalog=MixedGymDB;User Id={username};Password={password};Encrypt=False";
             }
             else
             {

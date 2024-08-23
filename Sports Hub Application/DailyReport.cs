@@ -313,22 +313,19 @@ namespace Mixed_Gym_Application
     { "Notes", "Note" }
 };
 
-       
+
 
         private void PrintButton_Click(object sender, EventArgs e)
         {
-            
+            currentPageIndex = 0;
             columnsToPrint = transactionsGridView.Columns.Cast<DataGridViewColumn>()
-                .Where(col => col.Visible && col.Name != "UserID").ToList(); // Exclude UserID column from printing
+                .Where(col => col.Visible && col.Name != "UserID").ToList();  // Exclude UserID column from printing
 
             PrintDocument printDocument = new PrintDocument();
             printDocument.PrintPage += PrintDocument_PrintPage;
 
-            // Set the default page settings to landscape
+            // Set landscape mode
             printDocument.DefaultPageSettings.Landscape = true;
-
-            // Set wider margins
-            printDocument.DefaultPageSettings.Margins = new Margins(50, 50, 50, 50);
 
             PrintDialog printDialog = new PrintDialog
             {
@@ -340,17 +337,31 @@ namespace Mixed_Gym_Application
                 printDocument.Print();
             }
         }
+        private int currentPage = 0; // Track the current page number
+        private int rowsPerPage; // Number of rows per page
+        private int totalRows; // Total number of rows
 
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
-            int x = e.MarginBounds.Left;
-            int y = e.MarginBounds.Top;
-            int rowSpacing = 5; // Space between rows
-            int rowsPerPage = 20; // Define how many rows per page you want
+            // Calculate scale factor for fitting content to page width
+            int totalWidth = columnsToPrint.Sum(col => col.Width);
+            int printableWidth = e.MarginBounds.Width;
+            float scaleFactor = (float)printableWidth / totalWidth;
 
-            int headerHeight = 50; // Height for the header
+            // Calculate rows per page
+            rowsPerPage = (int)((e.MarginBounds.Height - e.MarginBounds.Top) / (transactionsGridView.RowTemplate.Height + 5)); // Adjust spacing as needed
+
+            // Print header with title and date on each page
+            string headerTitle = "يومي";
             string headerText = "تقرير يومي";
             string reportDateText = $"التاريخ: {datePicker.Value.Date.ToShortDateString()}";
+
+            // Move y position below the header
+            float y = e.MarginBounds.Top + 60; // Adjust as needed
+            float x = e.MarginBounds.Left;
+
+
+
 
             // Define font sizes
             Font headerFont = new Font(transactionsGridView.Font.FontFamily, 14, FontStyle.Bold);
@@ -371,10 +382,6 @@ namespace Mixed_Gym_Application
             // Add additional space between date and content
             y += (int)headerSize.Height + (int)dateSize.Height + 40; // Increase the space as needed
 
-            int totalWidth = columnsToPrint.Sum(col => col.Width);
-            int printableWidth = e.MarginBounds.Width;
-
-            float scaleFactor = 1.0f;
             if (totalWidth > printableWidth)
             {
                 scaleFactor = (float)printableWidth / totalWidth;
@@ -382,7 +389,6 @@ namespace Mixed_Gym_Application
 
             int remainingWidth = printableWidth;
             int columnsPrinted = 0;
-
             // Print column headers
             foreach (var column in columnsToPrint)
             {
@@ -400,57 +406,54 @@ namespace Mixed_Gym_Application
                 columnsPrinted++;
             }
 
-            y += transactionsGridView.RowTemplate.Height + rowSpacing; // Add space after header
+            y += 40 + 5; // Move down for rows, adjust spacing as needed
             x = e.MarginBounds.Left;
 
-            // Print rows
-            int rowsPrinted = 0;
-            while (rowsPrinted < rowsPerPage && currentPageIndex < transactionsGridView.Rows.Count)
+            // Calculate total rows if not already done
+            if (totalRows == 0)
             {
-                DataGridViewRow row = transactionsGridView.Rows[currentPageIndex];
-                if (row.IsNewRow)
-                {
-                    currentPageIndex++;
-                    continue;
-                }
+                totalRows = transactionsGridView.Rows.Count;
+            }
 
-                remainingWidth = printableWidth;
+            // Track rows printed on current page
+            int rowsPrinted = 0;
 
-                foreach (var cell in row.Cells.Cast<DataGridViewCell>().Where(c => c.OwningColumn.Name != "UserID"))
+            // Print rows
+            for (int i = currentPage * rowsPerPage; i < totalRows; i++)
+            {
+                if (transactionsGridView.Rows[i].IsNewRow) continue;
+
+                x = e.MarginBounds.Left;
+                foreach (var cell in transactionsGridView.Rows[i].Cells.Cast<DataGridViewCell>().Where(c => c.OwningColumn.Name != "UserID"))
                 {
                     int cellWidth = (int)(cell.OwningColumn.Width * scaleFactor);
-                    if (remainingWidth < cellWidth)
-                    {
-                        break;
-                    }
-
                     RectangleF rect = new RectangleF(x, y, cellWidth, transactionsGridView.RowTemplate.Height);
                     e.Graphics.DrawString(cell.Value?.ToString(), transactionsGridView.Font, Brushes.Black, rect, new StringFormat { Alignment = StringAlignment.Center, LineAlignment = StringAlignment.Center });
                     x += cellWidth;
-                    remainingWidth -= cellWidth;
                 }
 
-                y += transactionsGridView.RowTemplate.Height + rowSpacing; // Add space after each row
-                x = e.MarginBounds.Left;
-                currentPageIndex++;
+                y += transactionsGridView.RowTemplate.Height + 5; // Move down for the next row
                 rowsPrinted++;
 
-                if (y >= e.MarginBounds.Bottom)
+                // Check if we need to create a new page
+                if (y > e.MarginBounds.Bottom)
                 {
                     e.HasMorePages = true;
+                    currentPage++;
                     return;
                 }
             }
 
+            // If we've finished printing all rows, reset for the next print job
             e.HasMorePages = false;
-            currentPageIndex = 0; // Reset for the next print job
+            currentPage = 0; // Reset page number for the next print job
+            totalRows = 0; // Reset total rows
         }
-    
-    
 
 
 
-    private void backButton_Click(object sender, EventArgs e)
+
+        private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             Home homeform = new Home(_username);

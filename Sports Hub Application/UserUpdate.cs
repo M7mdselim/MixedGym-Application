@@ -24,7 +24,7 @@ namespace Mixed_Gym_Application
 
         public UserUpdate(string username)
         {
-           
+
             InitializeComponent();
 
             _username = username;
@@ -49,9 +49,44 @@ namespace Mixed_Gym_Application
             usersDataGridView.CellDoubleClick += usersDataGridView_CellDoubleClick;
             nametxt.Leave += nametxt_Leave;
             ConfigureNameAutoComplete();
-        }
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "deleteColumn";
+            deleteButtonColumn.HeaderText = "";
+            deleteButtonColumn.Text = "مسح";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            usersDataGridView.Columns.Insert(0, deleteButtonColumn);
 
-        private void Home_Resize(object sender, EventArgs e)
+
+
+
+
+
+        }
+        private void usersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {  // Handle cell content click event here
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cell = usersDataGridView[e.ColumnIndex, e.RowIndex];
+
+            }
+
+            if (e.RowIndex >= 0 && usersDataGridView.Columns[e.ColumnIndex] is DataGridViewButtonColumn)
+            {
+                // Ask for confirmation
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this user?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    // Remove the row from the DataGridView
+                    usersDataGridView.Rows.RemoveAt(e.RowIndex);
+
+                    // Save changes to the database
+                    UpdateData();
+                }
+            }
+        }
+    
+
+    private void Home_Resize(object sender, EventArgs e)
         {
             float widthRatio = this.Width / _initialFormWidth;
             float heightRatio = this.Height / _initialFormHeight;
@@ -285,7 +320,7 @@ namespace Mixed_Gym_Application
             {
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    string query = "SELECT * FROM Users";
+                    string query = " SELECT TOP 100 * FROM Users  ORDER BY DateUpdated DESC";
                     SqlDataAdapter dataAdapter;
 
                     if (!string.IsNullOrEmpty(nameFilter))
@@ -350,16 +385,6 @@ namespace Mixed_Gym_Application
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred while updating data: " + ex.Message);
-            }
-        }
-
-        private void usersDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Handle cell content click event here
-            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            {
-                DataGridViewCell cell = usersDataGridView[e.ColumnIndex, e.RowIndex];
-
             }
         }
 

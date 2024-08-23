@@ -63,7 +63,6 @@
             this.exportimgbtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.categorycombo = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.kryptonButton1 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.updateuserbtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.nametxt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sportcombo)).BeginInit();
@@ -972,66 +971,6 @@
             this.kryptonButton1.Values.Text = "تقرير يومي";
             this.kryptonButton1.Click += new System.EventHandler(this.kryptonButton1_Click);
             // 
-            // updateuserbtn
-            // 
-            this.updateuserbtn.Location = new System.Drawing.Point(201, 511);
-            this.updateuserbtn.Name = "updateuserbtn";
-            this.updateuserbtn.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.updateuserbtn.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.updateuserbtn.OverrideDefault.Back.ColorAngle = 45F;
-            this.updateuserbtn.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.updateuserbtn.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.updateuserbtn.OverrideDefault.Border.ColorAngle = 45F;
-            this.updateuserbtn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.updateuserbtn.OverrideDefault.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.updateuserbtn.OverrideDefault.Border.Rounding = 18;
-            this.updateuserbtn.OverrideDefault.Border.Width = 1;
-            this.updateuserbtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.updateuserbtn.Size = new System.Drawing.Size(133, 46);
-            this.updateuserbtn.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.updateuserbtn.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.updateuserbtn.StateCommon.Back.ColorAngle = 45F;
-            this.updateuserbtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.updateuserbtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.updateuserbtn.StateCommon.Border.ColorAngle = 45F;
-            this.updateuserbtn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.updateuserbtn.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.updateuserbtn.StateCommon.Border.Rounding = 18;
-            this.updateuserbtn.StateCommon.Border.Width = 1;
-            this.updateuserbtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.updateuserbtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.updateuserbtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateuserbtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(146)))), ((int)(((byte)(197)))));
-            this.updateuserbtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(122)))), ((int)(((byte)(206)))));
-            this.updateuserbtn.StatePressed.Back.ColorAngle = 130F;
-            this.updateuserbtn.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(146)))), ((int)(((byte)(197)))));
-            this.updateuserbtn.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(122)))), ((int)(((byte)(206)))));
-            this.updateuserbtn.StatePressed.Border.ColorAngle = 130F;
-            this.updateuserbtn.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.updateuserbtn.StatePressed.Border.Rounding = 18;
-            this.updateuserbtn.StatePressed.Border.Width = 1;
-            this.updateuserbtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.updateuserbtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.updateuserbtn.StateTracking.Back.ColorAngle = 45F;
-            this.updateuserbtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
-            this.updateuserbtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.updateuserbtn.StateTracking.Border.ColorAngle = 45F;
-            this.updateuserbtn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.updateuserbtn.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.updateuserbtn.StateTracking.Border.Rounding = 18;
-            this.updateuserbtn.StateTracking.Border.Width = 1;
-            this.updateuserbtn.TabIndex = 48;
-            this.updateuserbtn.Values.Text = "تعديل سعر ";
-            this.updateuserbtn.Click += new System.EventHandler(this.updateuserbtn_Click);
-            // 
             // nametxt
             // 
             this.nametxt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -1062,7 +1001,6 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(906, 613);
             this.Controls.Add(this.nametxt);
-            this.Controls.Add(this.updateuserbtn);
             this.Controls.Add(this.kryptonButton1);
             this.Controls.Add(this.categorycombo);
             this.Controls.Add(this.exportimgbtn);
@@ -1147,7 +1085,6 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton exportimgbtn;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox categorycombo;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton1;
-        private ComponentFactory.Krypton.Toolkit.KryptonButton updateuserbtn;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox nametxt;
     }
 }

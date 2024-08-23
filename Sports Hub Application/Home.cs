@@ -200,7 +200,7 @@ namespace Mixed_Gym_Application
         private void signupbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SignUp SignupForm = new SignUp();
+            SignUp SignupForm = new SignUp(_username);
             SignupForm.ShowDialog();
             this.Close();
         }

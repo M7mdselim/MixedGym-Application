@@ -44,6 +44,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.rolecombo = new ComponentFactory.Krypton.Toolkit.KryptonComboBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.homebackbtn = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rolecombo)).BeginInit();
@@ -342,7 +343,7 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(601, 413);
+            this.linkLabel1.Location = new System.Drawing.Point(741, 373);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(53, 20);
             this.linkLabel1.TabIndex = 47;
@@ -350,12 +351,28 @@
             this.linkLabel1.Text = "Login";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // homebackbtn
+            // 
+            this.homebackbtn.AutoSize = true;
+            this.homebackbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homebackbtn.ForeColor = System.Drawing.Color.IndianRed;
+            this.homebackbtn.LinkColor = System.Drawing.Color.IndianRed;
+            this.homebackbtn.Location = new System.Drawing.Point(543, 413);
+            this.homebackbtn.Name = "homebackbtn";
+            this.homebackbtn.Size = new System.Drawing.Size(152, 20);
+            this.homebackbtn.TabIndex = 48;
+            this.homebackbtn.TabStop = true;
+            this.homebackbtn.Text = "رجوع للصفحه الرئيسيه";
+            this.homebackbtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.homebackbtn.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.homebackbtn_LinkClicked);
+            // 
             // SignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.homebackbtn);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.rolecombo);
             this.Controls.Add(this.label2);
@@ -404,6 +421,7 @@
         private System.Windows.Forms.Label label2;
         private ComponentFactory.Krypton.Toolkit.KryptonComboBox rolecombo;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel homebackbtn;
     }
 }
 

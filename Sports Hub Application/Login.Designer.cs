@@ -98,9 +98,9 @@
             this.Headerlabel.Location = new System.Drawing.Point(434, 60);
             this.Headerlabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Headerlabel.Name = "Headerlabel";
-            this.Headerlabel.Size = new System.Drawing.Size(231, 24);
+            this.Headerlabel.Size = new System.Drawing.Size(356, 24);
             this.Headerlabel.TabIndex = 0;
-            this.Headerlabel.Text = "Sport\'s Hub Dar Eldyafa";
+            this.Headerlabel.Text = "Sport\'s Hub Dar Eldyafa (Mixed Gym)";
             // 
             // captionlabel
             // 

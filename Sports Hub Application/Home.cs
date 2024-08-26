@@ -50,6 +50,7 @@ namespace Mixed_Gym_Application
             {
                
                    signupbtn.Visible = false;
+                changepassbtn.Visible = false;
                 
 
 
@@ -57,7 +58,8 @@ namespace Mixed_Gym_Application
             
             else if (roleID == 4)
             {
-               signupbtn.Visible = true;    
+               signupbtn.Visible = true;  
+               changepassbtn .Visible = true;
             }
         }
 
@@ -210,6 +212,14 @@ namespace Mixed_Gym_Application
             this.Hide();
             UserUpdate loginForm = new UserUpdate(_username);
             loginForm.ShowDialog();
+            this.Close();
+        }
+
+        private void changepassbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Changepass changepass = new Changepass(_username);
+            changepass.ShowDialog();
             this.Close();
         }
     }

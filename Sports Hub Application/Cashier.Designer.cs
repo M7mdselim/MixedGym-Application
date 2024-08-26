@@ -117,14 +117,15 @@
             // Headerlabel
             // 
             this.Headerlabel.AutoSize = true;
-            this.Headerlabel.Font = new System.Drawing.Font("Lucida Sans", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Headerlabel.Font = new System.Drawing.Font("Lucida Sans", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Headerlabel.ForeColor = System.Drawing.Color.Tomato;
-            this.Headerlabel.Location = new System.Drawing.Point(287, 29);
+            this.Headerlabel.Location = new System.Drawing.Point(299, 21);
             this.Headerlabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Headerlabel.Name = "Headerlabel";
-            this.Headerlabel.Size = new System.Drawing.Size(500, 39);
+            this.Headerlabel.Size = new System.Drawing.Size(422, 66);
             this.Headerlabel.TabIndex = 49;
-            this.Headerlabel.Text = "الحركه اليوميه لانشطه النشاط الرياضي";
+            this.Headerlabel.Text = "الحركه اليوميه لانشطه النشاط الرياضي\r\n[Mixed GYM]";
+            this.Headerlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // namelabel
             // 

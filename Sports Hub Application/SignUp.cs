@@ -106,7 +106,7 @@ namespace Mixed_Gym_Application
         private void signupbtn_Click(object sender, EventArgs e)
         {
             // Check if any of the required fields are empty
-            if (string.IsNullOrWhiteSpace(Usertxt.Text) || string.IsNullOrWhiteSpace(passwordtxt.Text) || string.IsNullOrWhiteSpace(confirmpasstxt.Text) || rolecombo.SelectedItem == null)
+            if (string.IsNullOrWhiteSpace(usertxt.Text) || string.IsNullOrWhiteSpace(passwordtxt.Text) || string.IsNullOrWhiteSpace(confirmpasstxt.Text) || rolecombo.SelectedItem == null)
             {
                 MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -149,7 +149,7 @@ namespace Mixed_Gym_Application
                     string checkUserQuery = "SELECT COUNT(*) FROM CashierDetails WHERE Username = @Username";
                     using (SqlCommand checkUserCommand = new SqlCommand(checkUserQuery, connection))
                     {
-                        checkUserCommand.Parameters.AddWithValue("@Username", Usertxt.Text);
+                        checkUserCommand.Parameters.AddWithValue("@Username", usertxt.Text);
                         int userCount = (int)checkUserCommand.ExecuteScalar();
 
                         if (userCount > 0)
@@ -164,7 +164,7 @@ namespace Mixed_Gym_Application
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         string password = passwordtxt.Text; // Consider hashing the password here
-                        command.Parameters.AddWithValue("@Username", Usertxt.Text);
+                        command.Parameters.AddWithValue("@Username", usertxt.Text);
                         command.Parameters.AddWithValue("@PasswordHash", password);
                         command.Parameters.AddWithValue("@RoleID", roleID); // Use the roleID from the dictionary
 
@@ -173,7 +173,7 @@ namespace Mixed_Gym_Application
                         if (result > 0)
                         {
                             MessageBox.Show("Sign up successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Usertxt.Text = null;
+                            usertxt.Text = null;
                             passwordtxt.Text = null;
                             confirmpasstxt.Text = null;
                             rolecombo.SelectedIndex = -1; // Clear the role combo box selection
@@ -226,6 +226,11 @@ namespace Mixed_Gym_Application
             Home home = new Home(_username);
             home.ShowDialog();
             this.Close();
+        }
+
+        private void usertxt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

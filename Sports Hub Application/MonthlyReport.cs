@@ -291,18 +291,19 @@ namespace Mixed_Gym_Application
 
         private Dictionary<string, string> columnHeaderMappings = new Dictionary<string, string>
 {
-    { "TransactionID", "ID" },
-    { "UserName", "User" },
-    { "CheckNumber", "Check" },
-    { "SportName", "Sport" },
-    { "SportPrice", "Price" },
-    { "MobileNumber", "Phone" },
-    { "AmountPaid", "Paid" },
-    { "RemainingAmount", "Remaining" },
+   { "TransactionID", "ID" },
+    { "UserName", "الاسم" },
+    { "CheckNumber", "رقم الايصال" },
+    { "SportName", "النشاط" },
+    { "SportPrice", "سعر النشاط" },
+    { "Category", "الفئه" },
+    { "MobileNumber", "تليفون" },
+    { "AmountPaid", "مدفوع" },
+    { "RemainingAmount", "متبقي" },
     { "DiscountPercentage", "%" },
-    { "DateAndTime", "Date" },
-    { "CashierName", "Cashier" },
-    { "Notes", "Note" }
+    { "DateAndTime", "تاريخ" },
+    { "CashierName", "كاشير" },
+    { "Notes", "ملحوظه" }
 };
 
         private Dictionary<string, object> printDataContainer = new Dictionary<string, object>();
@@ -338,6 +339,7 @@ namespace Mixed_Gym_Application
                 printDocument.Print();
             }
         }
+
         private int currentPage = 0; // Track the current page number
         private int rowsPerPage; // Number of rows per page
         private int totalRows; // Total number of rows
@@ -372,7 +374,7 @@ namespace Mixed_Gym_Application
                 x += columnWidth;
             }
 
-            y += 40 + 5; // Move down for rows, adjust spacing as needed
+            y += 45; // Move down for rows, adjust spacing as needed
             x = e.MarginBounds.Left;
 
             // Calculate total rows if not already done
@@ -389,6 +391,16 @@ namespace Mixed_Gym_Application
             {
                 if (transactionsGridView.Rows[i].IsNewRow) continue;
 
+                float rowHeight = transactionsGridView.RowTemplate.Height + 5;
+
+                // Check if the row fits on the current page
+                if (y + rowHeight > e.MarginBounds.Bottom)
+                {
+                    e.HasMorePages = true;
+                    currentPage++;
+                    return;
+                }
+
                 x = e.MarginBounds.Left;
                 foreach (var cell in transactionsGridView.Rows[i].Cells.Cast<DataGridViewCell>().Where(c => c.OwningColumn.Name != "UserID"))
                 {
@@ -398,16 +410,8 @@ namespace Mixed_Gym_Application
                     x += cellWidth;
                 }
 
-                y += transactionsGridView.RowTemplate.Height + 5; // Move down for the next row
+                y += rowHeight; // Move down for the next row
                 rowsPrinted++;
-
-                // Check if we need to create a new page
-                if (y > e.MarginBounds.Bottom)
-                {
-                    e.HasMorePages = true;
-                    currentPage++;
-                    return;
-                }
             }
 
             // If we've finished printing all rows, reset for the next print job

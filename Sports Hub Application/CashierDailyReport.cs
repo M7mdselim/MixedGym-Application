@@ -287,18 +287,19 @@ namespace Mixed_Gym_Application
 
         private Dictionary<string, string> columnHeaderMappings = new Dictionary<string, string>
 {
-    { "TransactionID", "ID" },
-    { "UserName", "User" },
-    { "CheckNumber", "Check" },
-    { "SportName", "Sport" },
-    { "SportPrice", "Price" },
-    { "MobileNumber", "Phone" },
-    { "AmountPaid", "Paid" },
-    { "RemainingAmount", "Remaining" },
+     { "TransactionID", "ID" },
+    { "UserName", "الاسم" },
+    { "CheckNumber", "رقم الايصال" },
+    { "SportName", "النشاط" },
+    { "SportPrice", "سعر النشاط" },
+    { "Category", "الفئه" },
+    { "MobileNumber", "تليفون" },
+    { "AmountPaid", "مدفوع" },
+    { "RemainingAmount", "متبقي" },
     { "DiscountPercentage", "%" },
-    { "DateAndTime", "Date" },
-    { "CashierName", "Cashier" },
-    { "Notes", "Note" }
+    { "DateAndTime", "تاريخ" },
+    { "CashierName", "كاشير" },
+    { "Notes", "ملحوظه" }
 };
 
 
@@ -405,6 +406,13 @@ namespace Mixed_Gym_Application
                     continue;
                 }
 
+                // Check if the next row would fit on the current page
+                if (y + transactionsGridView.RowTemplate.Height + rowSpacing > e.MarginBounds.Bottom)
+                {
+                    e.HasMorePages = true;
+                    return;
+                }
+
                 remainingWidth = printableWidth;
 
                 foreach (var cell in row.Cells.Cast<DataGridViewCell>().Where(c => c.OwningColumn.Name != "UserID"))
@@ -425,12 +433,6 @@ namespace Mixed_Gym_Application
                 x = e.MarginBounds.Left;
                 currentPageIndex++;
                 rowsPrinted++;
-
-                if (y >= e.MarginBounds.Bottom)
-                {
-                    e.HasMorePages = true;
-                    return;
-                }
             }
 
             e.HasMorePages = false;

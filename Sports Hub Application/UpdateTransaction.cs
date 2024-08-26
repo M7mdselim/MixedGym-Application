@@ -185,12 +185,20 @@ namespace Mixed_Gym_Application
                             userCommand.Parameters.AddWithValue("@Name", normalizedFilter);
                             connection.Open();
 
-                            object result = userCommand.ExecuteScalar();
-                            if (result != null)
+                            List<int> userIds = new List<int>();
+
+                            using (SqlDataReader reader = userCommand.ExecuteReader())
                             {
-                                int userId = Convert.ToInt32(result);
-                                // Load transactions for this UserID
-                                LoadData(userId);
+                                while (reader.Read())
+                                {
+                                    userIds.Add(reader.GetInt32(0));
+                                }
+                            }
+
+                            if (userIds.Count > 0)
+                            {
+                                // Load transactions for all matching UserIDs
+                                LoadData(userIds);
                             }
                             else
                             {
@@ -205,6 +213,7 @@ namespace Mixed_Gym_Application
                 MessageBox.Show("An error occurred while searching for transactions: " + ex.Message);
             }
         }
+
         private void LoadRecentTransactions()
         {
             try
@@ -269,26 +278,35 @@ namespace Mixed_Gym_Application
 
 
 
-        private void LoadData(int userId)
+        private void LoadData(List<int> userIds)
         {
             try
             {
+                if (userIds == null || userIds.Count == 0)
+                {
+                    MessageBox.Show("No user IDs provided.");
+                    return;
+                }
+
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    string query = "SELECT * FROM Transactions WHERE UserID = @UserID";
+                    // Create a comma-separated string of user IDs
+                    string userIdList = string.Join(",", userIds);
+
+                    string query = $"SELECT * FROM Transactions WHERE UserID IN ({userIdList})";
+
                     using (SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection))
                     {
-                        dataAdapter.SelectCommand.Parameters.AddWithValue("@UserID", userId);
                         DataTable dataTable = new DataTable();
                         dataAdapter.Fill(dataTable);
 
                         bindingSource.DataSource = dataTable;
-                       usersDataGridView.DataSource = bindingSource;
+                        usersDataGridView.DataSource = bindingSource;
 
                         // Remove the existing SportName column if it exists
                         if (usersDataGridView.Columns.Contains("SportName"))
                         {
-                           usersDataGridView.Columns.Remove("SportName");
+                            usersDataGridView.Columns.Remove("SportName");
                         }
 
                         // Add the DataGridViewComboBoxColumn for SportName
@@ -302,20 +320,21 @@ namespace Mixed_Gym_Application
                         };
 
                         // Insert the column after the UserID column
-                        int userIdColumnIndex =usersDataGridView.Columns["UserID"].Index;
-                       usersDataGridView.Columns.Add(sportNameColumn);
-                       usersDataGridView.Columns["SportName"].DisplayIndex = userIdColumnIndex + 1;
+                        int userIdColumnIndex = usersDataGridView.Columns["UserID"].Index;
+                        usersDataGridView.Columns.Add(sportNameColumn);
+                        usersDataGridView.Columns["SportName"].DisplayIndex = userIdColumnIndex + 1;
 
-                       usersDataGridView.Columns["TransactionID"].ReadOnly = true;
-                       usersDataGridView.Columns["UserID"].ReadOnly = true;
-                       usersDataGridView.Columns["DateAndTime"].ReadOnly = true;
-                       usersDataGridView.Columns["CashierName"].ReadOnly = true;
-                       usersDataGridView.Columns["RemainingAmount"].ReadOnly = true;
+                        // Set specific columns to read-only
+                        usersDataGridView.Columns["TransactionID"].ReadOnly = true;
+                        usersDataGridView.Columns["UserID"].ReadOnly = true;
+                        usersDataGridView.Columns["DateAndTime"].ReadOnly = true;
+                        usersDataGridView.Columns["CashierName"].ReadOnly = true;
+                        usersDataGridView.Columns["RemainingAmount"].ReadOnly = true;
 
                         // Optionally, hide the SportID column if needed
                         if (usersDataGridView.Columns.Contains("SportID"))
                         {
-                           usersDataGridView.Columns["SportID"].Visible = false;
+                            usersDataGridView.Columns["SportID"].Visible = false;
                         }
                     }
                 }
@@ -326,6 +345,7 @@ namespace Mixed_Gym_Application
                 MessageBox.Show("An error occurred while loading transactions: " + ex.Message);
             }
         }
+
 
 
 

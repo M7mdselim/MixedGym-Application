@@ -36,6 +36,7 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.signupbtn = new System.Windows.Forms.Button();
             this.updateform = new System.Windows.Forms.Button();
+            this.changepassbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CashierFormbtn
@@ -108,9 +109,9 @@
             this.signupbtn.BackColor = System.Drawing.Color.Black;
             this.signupbtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.signupbtn.ForeColor = System.Drawing.Color.IndianRed;
-            this.signupbtn.Location = new System.Drawing.Point(83, 476);
+            this.signupbtn.Location = new System.Drawing.Point(179, 474);
             this.signupbtn.Name = "signupbtn";
-            this.signupbtn.Size = new System.Drawing.Size(183, 35);
+            this.signupbtn.Size = new System.Drawing.Size(132, 35);
             this.signupbtn.TabIndex = 21;
             this.signupbtn.Text = "اضافه حساب";
             this.signupbtn.UseVisualStyleBackColor = false;
@@ -130,12 +131,27 @@
             this.updateform.UseVisualStyleBackColor = false;
             this.updateform.Click += new System.EventHandler(this.updateform_Click);
             // 
+            // changepassbtn
+            // 
+            this.changepassbtn.BackColor = System.Drawing.Color.Black;
+            this.changepassbtn.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.changepassbtn.ForeColor = System.Drawing.Color.IndianRed;
+            this.changepassbtn.Location = new System.Drawing.Point(35, 474);
+            this.changepassbtn.Name = "changepassbtn";
+            this.changepassbtn.Size = new System.Drawing.Size(121, 35);
+            this.changepassbtn.TabIndex = 24;
+            this.changepassbtn.Text = "تغيير كلمه سر";
+            this.changepassbtn.UseVisualStyleBackColor = false;
+            this.changepassbtn.Visible = false;
+            this.changepassbtn.Click += new System.EventHandler(this.changepassbtn_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(356, 523);
+            this.Controls.Add(this.changepassbtn);
             this.Controls.Add(this.updateform);
             this.Controls.Add(this.signupbtn);
             this.Controls.Add(this.exitButton);
@@ -161,5 +177,6 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button signupbtn;
         private System.Windows.Forms.Button updateform;
+        private System.Windows.Forms.Button changepassbtn;
     }
 }

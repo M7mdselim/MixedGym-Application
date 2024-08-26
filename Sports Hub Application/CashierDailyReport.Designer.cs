@@ -55,13 +55,14 @@ namespace Mixed_Gym_Application
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.titleLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.Red;
-            this.titleLabel.Location = new System.Drawing.Point(376, 24);
+            this.titleLabel.Location = new System.Drawing.Point(354, 9);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(237, 44);
+            this.titleLabel.Size = new System.Drawing.Size(194, 68);
             this.titleLabel.TabIndex = 3;
-            this.titleLabel.Text = "تقرير كاشير يومي";
+            this.titleLabel.Text = "تقرير كاشير يومي\r\n[Mixed GYM]";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PrintButton
             // 

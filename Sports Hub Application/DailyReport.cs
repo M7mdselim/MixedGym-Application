@@ -300,17 +300,18 @@ namespace Mixed_Gym_Application
         private Dictionary<string, string> columnHeaderMappings = new Dictionary<string, string>
 {
     { "TransactionID", "ID" },
-    { "UserName", "User" },
-    { "CheckNumber", "Check" },
-    { "SportName", "Sport" },
-    { "SportPrice", "Price" },
-    { "MobileNumber", "Phone" },
-    { "AmountPaid", "Paid" },
-    { "RemainingAmount", "Remaining" },
+    { "UserName", "الاسم" },
+    { "CheckNumber", "رقم الايصال" },
+    { "SportName", "النشاط" },
+    { "SportPrice", "سعر النشاط" },
+    { "Category", "الفئه" },
+    { "MobileNumber", "تليفون" },
+    { "AmountPaid", "مدفوع" },
+    { "RemainingAmount", "متبقي" },
     { "DiscountPercentage", "%" },
-    { "DateAndTime", "Date" },
-    { "CashierName", "Cashier" },
-    { "Notes", "Note" }
+    { "DateAndTime", "تاريخ" },
+    { "CashierName", "كاشير" },
+    { "Notes", "ملحوظه" }
 };
 
 
@@ -356,12 +357,9 @@ namespace Mixed_Gym_Application
             string headerText = "تقرير يومي";
             string reportDateText = $"التاريخ: {datePicker.Value.Date.ToShortDateString()}";
 
-            // Move y position below the header
-            float y = e.MarginBounds.Top + 60; // Adjust as needed
+            // Adjust the y position to decrease space above the header
+            float y = e.MarginBounds.Top - 30; // Start closer to the top of the page
             float x = e.MarginBounds.Left;
-
-
-
 
             // Define font sizes
             Font headerFont = new Font(transactionsGridView.Font.FontFamily, 14, FontStyle.Bold);
@@ -379,8 +377,8 @@ namespace Mixed_Gym_Application
             e.Graphics.DrawString(headerText, headerFont, Brushes.Black, new PointF(headerX, y));
             e.Graphics.DrawString(reportDateText, dateFont, Brushes.Black, new PointF(dateX, y + headerSize.Height + 5)); // Add space between header and date
 
-            // Add additional space between date and content
-            y += (int)headerSize.Height + (int)dateSize.Height + 40; // Increase the space as needed
+            // Add less additional space between date and content
+            y += (int)headerSize.Height + (int)dateSize.Height + 30; // Reduce the space as needed
 
             if (totalWidth > printableWidth)
             {
@@ -389,6 +387,7 @@ namespace Mixed_Gym_Application
 
             int remainingWidth = printableWidth;
             int columnsPrinted = 0;
+
             // Print column headers
             foreach (var column in columnsToPrint)
             {
@@ -406,7 +405,7 @@ namespace Mixed_Gym_Application
                 columnsPrinted++;
             }
 
-            y += 40 + 5; // Move down for rows, adjust spacing as needed
+            y += 25 + 5; // Move down for rows, adjust spacing as needed
             x = e.MarginBounds.Left;
 
             // Calculate total rows if not already done

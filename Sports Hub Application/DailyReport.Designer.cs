@@ -56,11 +56,11 @@ namespace Mixed_Gym_Application
             this.titleLabel.BackColor = System.Drawing.Color.Transparent;
             this.titleLabel.Font = new System.Drawing.Font("Arial", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.Red;
-            this.titleLabel.Location = new System.Drawing.Point(376, 24);
+            this.titleLabel.Location = new System.Drawing.Point(320, 24);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(156, 44);
+            this.titleLabel.Size = new System.Drawing.Size(289, 44);
             this.titleLabel.TabIndex = 3;
-            this.titleLabel.Text = "تقرير يومي";
+            this.titleLabel.Text = "تقرير يومي جيم ميكس";
             // 
             // PrintButton
             // 

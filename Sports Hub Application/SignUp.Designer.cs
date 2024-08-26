@@ -32,7 +32,7 @@
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.Headerlabel = new System.Windows.Forms.Label();
             this.captionlabel = new System.Windows.Forms.Label();
-            this.Usertxt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
+            this.usertxt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.passwordtxt = new ComponentFactory.Krypton.Toolkit.KryptonTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -119,23 +119,24 @@
             this.captionlabel.TabIndex = 1;
             this.captionlabel.Text = "Sign Up Form";
             // 
-            // Usertxt
+            // usertxt
             // 
-            this.Usertxt.Location = new System.Drawing.Point(427, 81);
-            this.Usertxt.Name = "Usertxt";
-            this.Usertxt.Size = new System.Drawing.Size(349, 31);
-            this.Usertxt.StateCommon.Back.Color1 = System.Drawing.Color.White;
-            this.Usertxt.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Usertxt.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.Usertxt.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            this.usertxt.Location = new System.Drawing.Point(427, 81);
+            this.usertxt.Name = "usertxt";
+            this.usertxt.Size = new System.Drawing.Size(349, 31);
+            this.usertxt.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.usertxt.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.usertxt.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.usertxt.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
             | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.Usertxt.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.Usertxt.StateCommon.Border.Rounding = 18;
-            this.Usertxt.StateCommon.Content.Color1 = System.Drawing.Color.Gray;
-            this.Usertxt.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Usertxt.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.Usertxt.TabIndex = 2;
+            this.usertxt.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.usertxt.StateCommon.Border.Rounding = 18;
+            this.usertxt.StateCommon.Content.Color1 = System.Drawing.Color.Gray;
+            this.usertxt.StateCommon.Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usertxt.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.usertxt.TabIndex = 2;
+            this.usertxt.TextChanged += new System.EventHandler(this.usertxt_TextChanged);
             // 
             // passwordtxt
             // 
@@ -384,7 +385,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.passwordtxt);
-            this.Controls.Add(this.Usertxt);
+            this.Controls.Add(this.usertxt);
             this.Controls.Add(this.captionlabel);
             this.Controls.Add(this.Headerlabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -409,7 +410,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
         private System.Windows.Forms.Label Headerlabel;
         private System.Windows.Forms.Label captionlabel;
-        private ComponentFactory.Krypton.Toolkit.KryptonTextBox Usertxt;
+        private ComponentFactory.Krypton.Toolkit.KryptonTextBox usertxt;
         private ComponentFactory.Krypton.Toolkit.KryptonTextBox passwordtxt;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;

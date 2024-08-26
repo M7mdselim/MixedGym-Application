@@ -198,6 +198,7 @@ D:\Selim\Programs\MixedGym\MixedGym-Application\Sports Hub Application\bin\Debug
 D:\Selim\Programs\MixedGym\MixedGym-Application\Sports Hub Application\bin\Debug\UglyToad.PdfPig.Tokens.xml
 D:\Selim\Programs\MixedGym\MixedGym-Application\Sports Hub Application\bin\Debug\nl\PdfiumViewer.resources.dll
 D:\Selim\Programs\MixedGym\MixedGym-Application\Sports Hub Application\obj\Debug\MixedGym.csproj.AssemblyReference.cache
+D:\Selim\Programs\MixedGym\MixedGym-Application\Sports Hub Application\obj\Debug\Mixed_Gym_Application.Changepass.resources
 D:\Selim\Programs\MixedGym\MixedGym-Application\Sports Hub Application\obj\Debug\Mixed_Gym_Application.SignUp.resources
 D:\Selim\Programs\MixedGym\MixedGym-Application\Sports Hub Application\obj\Debug\Mixed_Gym_Application.Cashier.resources
 D:\Selim\Programs\MixedGym\MixedGym-Application\Sports Hub Application\obj\Debug\Mixed_Gym_Application.CashierDailyReport.resources

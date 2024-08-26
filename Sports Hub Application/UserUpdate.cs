@@ -320,20 +320,22 @@ namespace Mixed_Gym_Application
             {
                 using (SqlConnection connection = new SqlConnection(ConnectionString))
                 {
-                    string query = " SELECT TOP 100 * FROM Users  ORDER BY DateUpdated DESC";
-                    SqlDataAdapter dataAdapter;
+                    string query = "SELECT TOP 100 * FROM Users";
 
                     if (!string.IsNullOrEmpty(nameFilter))
                     {
                         // Normalize the search filter
                         string normalizedFilter = NormalizeArabicText(nameFilter);
                         query += " WHERE Name LIKE @NameFilter";
-                        dataAdapter = new SqlDataAdapter(query, connection);
-                        dataAdapter.SelectCommand.Parameters.AddWithValue("@NameFilter", "%" + normalizedFilter + "%");
                     }
-                    else
+
+                    query += " ORDER BY DateUpdated DESC";
+
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+
+                    if (!string.IsNullOrEmpty(nameFilter))
                     {
-                        dataAdapter = new SqlDataAdapter(query, connection);
+                        dataAdapter.SelectCommand.Parameters.AddWithValue("@NameFilter", "%" + NormalizeArabicText(nameFilter) + "%");
                     }
 
                     DataTable dataTable = new DataTable();
@@ -360,6 +362,7 @@ namespace Mixed_Gym_Application
                 MessageBox.Show("An error occurred while loading data: " + ex.Message);
             }
         }
+
 
 
 
@@ -461,7 +464,7 @@ namespace Mixed_Gym_Application
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Home home = new Home("");
+            Home home = new Home(_username);
             home.ShowDialog();
             this.Close();
         }

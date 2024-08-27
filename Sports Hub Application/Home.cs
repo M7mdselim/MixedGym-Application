@@ -186,7 +186,7 @@ namespace Mixed_Gym_Application
 
         private void backButton_Click(object sender, EventArgs e)
         {         
-    var confirmResult = MessageBox.Show("اكيييد اخر كلام؟؟؟",
+    var confirmResult = MessageBox.Show("تاكيد الخروج؟؟؟",
                                          "Confirm Exit",
                                          MessageBoxButtons.YesNo,
                                          MessageBoxIcon.Question);

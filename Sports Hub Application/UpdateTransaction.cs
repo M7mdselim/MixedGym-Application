@@ -731,8 +731,8 @@ namespace Mixed_Gym_Application
                 .Replace('إ', 'ا')  // Normalize 'إ' to 'ا'
                 .Replace('آ', 'ا')  // Normalize 'آ' to 'ا'
                 .Replace('ى', 'ي')  // Normalize 'ى' to 'ي'
-                .Replace('ئ', 'ي')  // Normalize 'ئ' to 'ي'
-                .Replace('ة', 'ه')  // Normalize 'ة' to 'ه'
+               
+               
                 .Replace('ؤ', 'و'); // Normalize 'ؤ' to 'و'
         }
 
@@ -748,8 +748,8 @@ namespace Mixed_Gym_Application
                 .Replace('ا', 'إ')  // Reverse normalize 'ا' to 'إ'
                 .Replace('ا', 'آ')  // Reverse normalize 'ا' to 'آ'
                 .Replace('ي', 'ى')  // Reverse normalize 'ي' to 'ى'
-                .Replace('ي', 'ئ')  // Reverse normalize 'ي' to 'ئ'
-                .Replace('ه', 'ة')  // Reverse normalize 'ه' to 'ة'
+                
+              
                 .Replace('و', 'ؤ'); // Reverse normalize 'و' to 'ؤ'
         }
 

@@ -962,10 +962,10 @@ namespace Mixed_Gym_Application
             Debug.WriteLine($"Normalized Input: {normalizedInput}");
 
             string query = @"
-    SELECT ID, Mobilenumber, Name, Category, ProfileImage 
-    FROM Users 
-    WHERE dbo.NormalizeArabicText(Name) LIKE '%' + dbo.NormalizeArabicText(@Name) + '%'
-    ORDER BY DateUpdated DESC";
+SELECT ID, Mobilenumber, Name, Category, ProfileImage 
+FROM Users 
+WHERE Name LIKE '%' + @Name + '%' OR dbo.NormalizeArabicText(Name) LIKE '%' + dbo.NormalizeArabicText(@Name) + '%'
+ORDER BY DateUpdated DESC";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {
@@ -1082,8 +1082,8 @@ namespace Mixed_Gym_Application
                 .Replace('إ', 'ا')  // Normalize 'إ' to 'ا'
                 .Replace('آ', 'ا')  // Normalize 'آ' to 'ا'
                 .Replace('ى', 'ي')  // Normalize 'ى' to 'ي'
-                .Replace('ئ', 'ي')  // Normalize 'ئ' to 'ي'
-                .Replace('ة', 'ه')  // Normalize 'ة' to 'ه'
+                  // Normalize 'ئ' to 'ي'
+                 // Normalize 'ة' to 'ه'
                 .Replace('ؤ', 'و'); // Normalize 'ؤ' to 'و'
         }
 
@@ -1099,8 +1099,8 @@ namespace Mixed_Gym_Application
                 .Replace('ا', 'إ')  // Reverse normalize 'ا' to 'إ'
                 .Replace('ا', 'آ')  // Reverse normalize 'ا' to 'آ'
                 .Replace('ي', 'ى')  // Reverse normalize 'ي' to 'ى'
-                .Replace('ي', 'ئ')  // Reverse normalize 'ي' to 'ئ'
-                .Replace('ه', 'ة')  // Reverse normalize 'ه' to 'ة'
+                 // Reverse normalize 'ي' to 'ئ'
+                 // Reverse normalize 'ه' to 'ة'
                 .Replace('و', 'ؤ'); // Reverse normalize 'و' to 'ؤ'
         }
 

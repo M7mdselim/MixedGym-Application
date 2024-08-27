@@ -341,7 +341,6 @@ namespace Mixed_Gym_Application
         private int currentPage = 0; // Track the current page number
         private int rowsPerPage; // Number of rows per page
         private int totalRows; // Total number of rows
-
         private void PrintDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             // Calculate scale factor for fitting content to page width
@@ -353,7 +352,6 @@ namespace Mixed_Gym_Application
             rowsPerPage = (int)((e.MarginBounds.Height - e.MarginBounds.Top) / (transactionsGridView.RowTemplate.Height + 5)); // Adjust spacing as needed
 
             // Print header with title and date on each page
-            string headerTitle = "يومي";
             string headerText = "تقرير يومي";
             string reportDateText = $"التاريخ: {datePicker.Value.Date.ToShortDateString()}";
 
@@ -435,11 +433,11 @@ namespace Mixed_Gym_Application
                 rowsPrinted++;
 
                 // Check if we need to create a new page
-                if (y > e.MarginBounds.Bottom)
+                if (rowsPrinted >= rowsPerPage) // If printed rows exceed the number of rows per page
                 {
+                    currentPage++; // Increment page number
                     e.HasMorePages = true;
-                    currentPage++;
-                    return;
+                    return; // Exit method to trigger the next page
                 }
             }
 
@@ -448,6 +446,8 @@ namespace Mixed_Gym_Application
             currentPage = 0; // Reset page number for the next print job
             totalRows = 0; // Reset total rows
         }
+
+
 
 
 

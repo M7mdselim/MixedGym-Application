@@ -3,43 +3,8 @@
   "WorkspaceRootPath": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|MixedGym||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\dailyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\dailyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\dailyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\dailyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\databaseconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\updatetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\updatetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\updatetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\updatetransaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\userupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\userupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\userupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\userupdate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\customerreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\customerreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\customerreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -50,55 +15,8 @@
       "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\customerreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\customerreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\cashier.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\cashierdailyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\cashierdailyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\monthlyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\monthlyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\monthlyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\monthlyreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\changepass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\changepass.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\changepass.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\sports hub application\\userupdate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|solutionrelative:sports hub application\\userupdate.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DA7B957-19A0-4BF5-A2CE-454616D8E108}|Sports Hub Application\\MixedGym.csproj|d:\\selim\\programs\\mixedgym\\mixedgym-application\\sports hub application\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|6185191f-1008-4fb2-a715-3a4e4f27e610"
     }
   ],
   "DocumentGroupContainers": [
@@ -108,285 +26,57 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "UpdateTransaction.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UpdateTransaction.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\UpdateTransaction.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UpdateTransaction.cs",
-              "RelativeToolTip": "Sports Hub Application\\UpdateTransaction.cs",
-              "ViewState": "AQIAALoCAAAAAAAAAAAqwO8CAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T12:30:10.999Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DatabaseConfig.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\DatabaseConfig.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\DatabaseConfig.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\DatabaseConfig.cs",
-              "RelativeToolTip": "Sports Hub Application\\DatabaseConfig.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T12:44:58.499Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DailyReport.cs [Design]",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\DailyReport.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\DailyReport.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\DailyReport.cs [Design]",
-              "RelativeToolTip": "Sports Hub Application\\DailyReport.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T09:52:21.91Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DailyReport.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\DailyReport.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\DailyReport.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\DailyReport.cs",
-              "RelativeToolTip": "Sports Hub Application\\DailyReport.cs",
-              "ViewState": "AQIAAD4BAAAAAAAAAAAAAFcBAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T09:52:23.33Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MixedGym",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\MixedGym.csproj",
-              "RelativeDocumentMoniker": "Sports Hub Application\\MixedGym.csproj",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\MixedGym.csproj",
-              "RelativeToolTip": "Sports Hub Application\\MixedGym.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-08-26T13:37:15.088Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UpdateTransaction.cs [Design]",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UpdateTransaction.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\UpdateTransaction.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UpdateTransaction.cs [Design]",
-              "RelativeToolTip": "Sports Hub Application\\UpdateTransaction.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T12:30:09.172Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "UserUpdate.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UserUpdate.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\UserUpdate.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UserUpdate.cs",
-              "RelativeToolTip": "Sports Hub Application\\UserUpdate.cs",
-              "ViewState": "AQIAAMMAAAAAAAAAAAAAAMsAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T11:39:01.251Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "UserUpdate.cs [Design]",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UserUpdate.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\UserUpdate.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UserUpdate.cs [Design]",
-              "RelativeToolTip": "Sports Hub Application\\UserUpdate.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T11:38:59.657Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Home.cs [Design]",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Home.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\Home.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Home.cs [Design]",
-              "RelativeToolTip": "Sports Hub Application\\Home.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T13:32:40.672Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Home.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Home.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\Home.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Home.cs",
-              "RelativeToolTip": "Sports Hub Application\\Home.cs",
-              "ViewState": "AQIAAJkAAAAAAAAAAAAAALoAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T13:32:42.029Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CustomerReport.cs [Design]",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CustomerReport.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\CustomerReport.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CustomerReport.cs [Design]",
-              "RelativeToolTip": "Sports Hub Application\\CustomerReport.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T13:08:53.579Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CustomerReport.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CustomerReport.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\CustomerReport.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CustomerReport.cs",
-              "RelativeToolTip": "Sports Hub Application\\CustomerReport.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAAAHUAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T13:08:55.242Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Cashier.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Cashier.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\Cashier.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Cashier.cs",
-              "RelativeToolTip": "Sports Hub Application\\Cashier.cs",
-              "ViewState": "AQIAABIEAAAAAAAAAAAAAD0EAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T09:09:15.108Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
               "Title": "Cashier.cs [Design]",
               "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Cashier.cs",
               "RelativeDocumentMoniker": "Sports Hub Application\\Cashier.cs",
               "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Cashier.cs [Design]",
               "RelativeToolTip": "Sports Hub Application\\Cashier.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T13:13:48.939Z"
+              "WhenOpened": "2024-08-24T13:13:48.939Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MonthlyReport.cs [Design]",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\MonthlyReport.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\MonthlyReport.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\MonthlyReport.cs [Design]",
-              "RelativeToolTip": "Sports Hub Application\\MonthlyReport.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "Cashier.cs",
+              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Cashier.cs",
+              "RelativeDocumentMoniker": "Sports Hub Application\\Cashier.cs",
+              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Cashier.cs",
+              "RelativeToolTip": "Sports Hub Application\\Cashier.cs",
+              "ViewState": "AQIAACEEAAAAAAAAAAAAAE8EAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T09:52:44.568Z"
+              "WhenOpened": "2024-08-23T09:09:15.108Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CashierDailyReport.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CashierDailyReport.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\CashierDailyReport.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CashierDailyReport.cs",
-              "RelativeToolTip": "Sports Hub Application\\CashierDailyReport.cs",
-              "ViewState": "AQIAACMBAAAAAAAAAAAcwDMBAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "CustomerReport.cs [Design]",
+              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CustomerReport.cs",
+              "RelativeDocumentMoniker": "Sports Hub Application\\CustomerReport.cs",
+              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CustomerReport.cs [Design]",
+              "RelativeToolTip": "Sports Hub Application\\CustomerReport.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T09:41:27.611Z"
+              "WhenOpened": "2024-08-23T13:08:53.579Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "MonthlyReport.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\MonthlyReport.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\MonthlyReport.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\MonthlyReport.cs",
-              "RelativeToolTip": "Sports Hub Application\\MonthlyReport.cs",
-              "ViewState": "AQIAAJkBAAAAAAAAAAAAAKYBAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "CustomerReport.cs",
+              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CustomerReport.cs",
+              "RelativeDocumentMoniker": "Sports Hub Application\\CustomerReport.cs",
+              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\CustomerReport.cs",
+              "RelativeToolTip": "Sports Hub Application\\CustomerReport.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAAAIcAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T09:52:47.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Login.cs [Design]",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Login.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\Login.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\Login.cs [Design]",
-              "RelativeToolTip": "Sports Hub Application\\Login.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-25T09:38:22.73Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ChangePass.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\ChangePass.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\ChangePass.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\ChangePass.cs",
-              "RelativeToolTip": "Sports Hub Application\\ChangePass.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAcwFkAAAAHAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T12:41:24.547Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "ChangePass.cs [Design]",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\ChangePass.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\ChangePass.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\ChangePass.cs [Design]",
-              "RelativeToolTip": "Sports Hub Application\\ChangePass.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T12:39:48.328Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "SignUp.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\SignUp.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\SignUp.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\SignUp.cs",
-              "RelativeToolTip": "Sports Hub Application\\SignUp.cs",
-              "ViewState": "AQIAALMAAAAAAAAAAAAcwOgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T13:18:01.766Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "SignUp.cs [Design]",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\SignUp.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\SignUp.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\SignUp.cs [Design]",
-              "RelativeToolTip": "Sports Hub Application\\SignUp.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T12:37:14.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "ChangePass.Designer.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\ChangePass.Designer.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\ChangePass.Designer.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\ChangePass.Designer.cs",
-              "RelativeToolTip": "Sports Hub Application\\ChangePass.Designer.cs",
-              "ViewState": "AQIAAOsAAAAAAAAAAAAvwAABAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-24T12:42:38.722Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "UserUpdate.Designer.cs",
-              "DocumentMoniker": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UserUpdate.Designer.cs",
-              "RelativeDocumentMoniker": "Sports Hub Application\\UserUpdate.Designer.cs",
-              "ToolTip": "D:\\Selim\\Programs\\MixedGym\\MixedGym-Application\\Sports Hub Application\\UserUpdate.Designer.cs",
-              "RelativeToolTip": "Sports Hub Application\\UserUpdate.Designer.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAD4v2kAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-23T12:08:36.867Z"
+              "WhenOpened": "2024-08-23T13:08:55.242Z",
+              "EditorCaption": ""
             }
           ]
         },

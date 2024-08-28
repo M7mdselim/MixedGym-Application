@@ -116,7 +116,7 @@ namespace Mixed_Gym_Application
                 .Replace('ى', 'ي')  // Normalize 'ى' to 'ي'
                  // Normalize 'ئ' to 'ي'
                   // Normalize 'ة' to 'ه'
-                .Replace('ؤ', 'و'); // Normalize 'ؤ' to 'و'
+               ; // Normalize 'ؤ' to 'و'
         }
 
 
@@ -133,7 +133,7 @@ namespace Mixed_Gym_Application
                 .Replace('ي', 'ى')  // Reverse normalize 'ي' to 'ى'
                 // Reverse normalize 'ي' to 'ئ'
                   // Reverse normalize 'ه' to 'ة'
-                .Replace('و', 'ؤ'); // Reverse normalize 'و' to 'ؤ'
+                ; // Reverse normalize 'و' to 'ؤ'
         }
 
 

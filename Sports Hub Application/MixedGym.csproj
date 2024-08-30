@@ -346,6 +346,11 @@
   <ItemGroup>
     <Content Include="Fun-run-people-logo.ico" />
     <Content Include="logoo.ico" />
+    <None Include="Resources\Picture1513461.png" />
+    <None Include="Resources\Picture151346.png" />
+    <None Include="Resources\App Poster.jpg" />
+    <None Include="Resources\App Poster.png" />
+    <None Include="Resources\2.png" />
     <None Include="Resources\153-1531682_open-red-back-button-png.png" />
     <Content Include="Resources\187803-200.png" />
     <None Include="Resources\Fun run people logo %281%29.png" />

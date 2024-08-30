@@ -83,6 +83,36 @@ namespace Mixed_Gym_Application.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2 {
+            get {
+                object obj = ResourceManager.GetObject("2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap App_Poster {
+            get {
+                object obj = ResourceManager.GetObject("App Poster", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap App_Poster1 {
+            get {
+                object obj = ResourceManager.GetObject("App Poster1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fun_run_people_logo {
             get {
                 object obj = ResourceManager.GetObject("Fun run people logo", resourceCulture);
@@ -96,6 +126,26 @@ namespace Mixed_Gym_Application.Properties {
         internal static System.Drawing.Bitmap Fun_run_people_logo__1_ {
             get {
                 object obj = ResourceManager.GetObject("Fun run people logo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Picture151346 {
+            get {
+                object obj = ResourceManager.GetObject("Picture151346", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Picture1513461 {
+            get {
+                object obj = ResourceManager.GetObject("Picture1513461", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

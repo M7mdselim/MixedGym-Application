@@ -468,12 +468,12 @@ namespace Mixed_Gym_Application
                             {
                                 sportpricelistlabel.Invoke(new Action(() =>
                                 {
-                                    sportpricelistlabel.Text = "Total price = " + price.ToString("F2");
+                                    sportpricelistlabel.Text = "Total : " + price.ToString("F2");
                                 }));
                             }
                             else
                             {
-                                sportpricelistlabel.Text = "Total price = " + price.ToString("F2");
+                                sportpricelistlabel.Text = "Total : " + price.ToString("F2");
                             }
                         }
                         else
@@ -2042,9 +2042,11 @@ ORDER BY DateUpdated DESC";
 
         }
 
+
+
         // Reattach the event handler after updating the TextBox
-    
-        }
+
+    }
 
 
     }

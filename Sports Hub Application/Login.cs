@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using ComponentFactory.Krypton.Toolkit;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Reflection.Emit;
 
 
 namespace Mixed_Gym_Application
@@ -102,6 +103,10 @@ namespace Mixed_Gym_Application
             string username = Usertxt.Text;
             string password = passwordtxt.Text;
 
+            // Initially hide all labels
+            label2.Visible = false;
+            label5.Visible = false;
+
             if (ValidateLogin(username, password, out int roleID))
             {
                 LoggedInUsername = username;
@@ -116,8 +121,72 @@ namespace Mixed_Gym_Application
             }
             else
             {
-                MessageBox.Show("Username or Password is Incorrect.");
+                // Determine which label to show based on which field is incorrect
+                if (!IsUsernameValid(username))
+                {
+                    label2.Visible = true;
+                    Usertxt.Focus(); // Set focus to the username text box
+                }
+                else if (!IsPasswordValid(password))
+                {
+                    label5.Visible = true;
+                    passwordtxt.Focus(); // Set focus to the password text box
+                }
+                else
+                {
+                    // If the username is correct but password is incorrect
+                    label5.Visible = true;
+                    passwordtxt.Focus(); // Set focus to the password text box
+                }
+
+              // MessageBox.Show("Username or Password is Incorrect.");
             }
+        }
+
+        private bool IsUsernameValid(string username)
+        {
+            bool isValid = false;
+
+            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            {
+                string query = "SELECT COUNT(*) FROM CashierDetails WHERE Username = @Username";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", username);
+
+                    try
+                    {
+                        connection.Open();
+                        int count = (int)command.ExecuteScalar();
+                        isValid = (count > 0);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred while checking username: " + ex.Message);
+                    }
+                }
+            }
+
+            return isValid;
+        }
+
+
+        private bool IsPasswordValid(string password)
+        {
+            // Example password validation logic:
+            // - Minimum length of 6 characters
+            // - Contains at least one digit
+            // - Contains at least one uppercase letter
+            // - Contains at least one lowercase letter
+
+            if (string.IsNullOrWhiteSpace(password))
+                return false;
+
+            bool hasDigit = password.Any(char.IsDigit);
+            bool hasUpper = password.Any(char.IsUpper);
+            bool hasLower = password.Any(char.IsLower);
+
+            return password.Length >= 6 && hasDigit && hasUpper && hasLower;
         }
 
 
@@ -215,6 +284,21 @@ namespace Mixed_Gym_Application
         }
 
         private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Usertxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void captionlabel_Click(object sender, EventArgs e)
         {
 
         }

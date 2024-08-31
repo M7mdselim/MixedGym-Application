@@ -660,7 +660,7 @@ namespace Mixed_Gym_Application
 
                     // Define folder path
                     string folderPath = @"\\192.168.50.5\e\Daily Backup\MixedGymScreenshots";
-                    //string folderPath = @"F:\New folder";
+                   // string folderPath = @"F:\New folder";
                     // F:\New folder
                     // Create directory if it doesn't exist
                     if (!Directory.Exists(folderPath))
@@ -1526,13 +1526,29 @@ ORDER BY DateUpdated DESC";
         private decimal originalTotalPrice; // Variable to store the original total price
         private decimal discountPercentage; // Variable to store the discount percentage
 
-        private void applyDiscountButton_Click_1(object sender, EventArgs e)
+        private async void applyDiscountButton_Click(object sender, EventArgs e)
         {
-            decimal totalPrice;
+            // Ensure that a valid price is displayed before applying a discount
+            if (string.IsNullOrWhiteSpace(sportpricelistlabel.Text) || !sportpricelistlabel.Text.Contains(":"))
+            {
+                MessageBox.Show("Please select a sport and fetch its price before applying a discount.");
+                return;
+            }
 
-            if (!decimal.TryParse(sportpricelistlabel.Text.Split('=')[1].Trim(), out totalPrice))
+            decimal totalPrice;
+            // Try to parse the total price from the label text
+            if (!decimal.TryParse(sportpricelistlabel.Text.Split(':')[1].Trim(), out totalPrice))
             {
                 MessageBox.Show("Invalid total price.");
+                return;
+            }
+
+            if (isDiscountApplied)
+            {
+                // Reset to the original total price if discount is applied
+                sportpricelistlabel.Text = "Total : " + originalTotalPrice.ToString("F2");
+                MessageBox.Show("Discount reset. Original total price restored.");
+                isDiscountApplied = false; // Reset the flag
                 return;
             }
 
@@ -1544,30 +1560,21 @@ ORDER BY DateUpdated DESC";
                 return;
             }
 
-            if (isDiscountApplied)
-            {
-                // Reset the total price to the original value before applying new discount
-                totalPrice = originalTotalPrice;
-            }
-            else
-            {
-                // Store the original total price before applying the first discount
-                originalTotalPrice = totalPrice;
-            }
+            // Store the original total price before applying the first discount
+            originalTotalPrice = totalPrice;
 
             // Calculate the discount amount and the new total price
             decimal discountAmount = (totalPrice * discountPercentage) / 100;
             decimal discountedTotal = totalPrice - discountAmount;
 
             // Update the total price label
-            sportpricelistlabel.Text = "Total price = " + discountedTotal.ToString("0.00");
+            sportpricelistlabel.Text = "Total : " + discountedTotal.ToString("F2");
 
             MessageBox.Show($"Discount applied. New total price: {discountedTotal:0.00}");
 
             isDiscountApplied = true; // Set the flag to true indicating the discount has been applied
         }
 
-       
 
         public class ComboBoxItem
         {

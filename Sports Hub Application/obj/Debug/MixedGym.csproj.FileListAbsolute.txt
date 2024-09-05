@@ -241,8 +241,6 @@ E:\تطبيقات\دار الضيافة\سليم GitHub\MixedGym-Application\Spo
 E:\تطبيقات\دار الضيافة\سليم GitHub\MixedGym-Application\Sports Hub Application\bin\Debug\UglyToad.PdfPig.Tokens.dll
 E:\تطبيقات\دار الضيافة\سليم GitHub\MixedGym-Application\Sports Hub Application\bin\Debug\XLParser.dll
 E:\تطبيقات\دار الضيافة\سليم GitHub\MixedGym-Application\Sports Hub Application\bin\Debug\ClosedXML.xml
-E:\تطبيقات\دار الضيافة\سليم GitHub\MixedGym-Application\Sports Hub Application\bin\Debug\ComponentFactory.Krypton.Ribbon.pdb
-E:\تطبيقات\دار الضيافة\سليم GitHub\MixedGym-Application\Sports Hub Application\bin\Debug\ComponentFactory.Krypton.Toolkit.pdb
 E:\تطبيقات\دار الضيافة\سليم GitHub\MixedGym-Application\Sports Hub Application\bin\Debug\DocumentFormat.OpenXml.xml
 E:\تطبيقات\دار الضيافة\سليم GitHub\MixedGym-Application\Sports Hub Application\bin\Debug\ExcelNumberFormat.xml
 E:\تطبيقات\دار الضيافة\سليم GitHub\MixedGym-Application\Sports Hub Application\bin\Debug\PdfiumViewer.xml

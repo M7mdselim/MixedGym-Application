@@ -2049,6 +2049,11 @@ ORDER BY DateUpdated DESC";
 
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
 
         // Reattach the event handler after updating the TextBox

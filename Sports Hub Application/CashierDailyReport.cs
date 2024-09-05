@@ -613,6 +613,20 @@ namespace Mixed_Gym_Application
             
 
         }
+
+        private void titleLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Cashier cashier = new Cashier(_username);
+
+            cashier.ShowDialog();
+            this.Close();
+        }
     }
 }
 

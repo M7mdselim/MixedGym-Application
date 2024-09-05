@@ -42,7 +42,7 @@
             // CashierFormbtn
             // 
             this.CashierFormbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.CashierFormbtn.Font = new System.Drawing.Font("هشام غرناطة طبيعي", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.CashierFormbtn.Font = new System.Drawing.Font("PT Bold Heading", 15.75F);
             this.CashierFormbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.CashierFormbtn.Location = new System.Drawing.Point(35, 17);
             this.CashierFormbtn.Name = "CashierFormbtn";
@@ -55,7 +55,7 @@
             // DailyReportbtn
             // 
             this.DailyReportbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.DailyReportbtn.Font = new System.Drawing.Font("هشام غرناطة طبيعي", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.DailyReportbtn.Font = new System.Drawing.Font("PT Bold Heading", 15.75F);
             this.DailyReportbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.DailyReportbtn.Location = new System.Drawing.Point(35, 99);
             this.DailyReportbtn.Name = "DailyReportbtn";
@@ -68,7 +68,7 @@
             // MonthlyReportbtn
             // 
             this.MonthlyReportbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.MonthlyReportbtn.Font = new System.Drawing.Font("هشام غرناطة طبيعي", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.MonthlyReportbtn.Font = new System.Drawing.Font("PT Bold Heading", 15.75F);
             this.MonthlyReportbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.MonthlyReportbtn.Location = new System.Drawing.Point(35, 181);
             this.MonthlyReportbtn.Name = "MonthlyReportbtn";
@@ -81,7 +81,7 @@
             // CustomerReportBtn
             // 
             this.CustomerReportBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.CustomerReportBtn.Font = new System.Drawing.Font("هشام غرناطة طبيعي", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.CustomerReportBtn.Font = new System.Drawing.Font("PT Bold Heading", 15.75F);
             this.CustomerReportBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.CustomerReportBtn.Location = new System.Drawing.Point(35, 263);
             this.CustomerReportBtn.Name = "CustomerReportBtn";
@@ -94,7 +94,7 @@
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.exitButton.Font = new System.Drawing.Font("هشام غرناطة طبيعي", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.exitButton.Font = new System.Drawing.Font("PT Bold Heading", 15.75F);
             this.exitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.exitButton.Location = new System.Drawing.Point(116, 416);
             this.exitButton.Name = "exitButton";
@@ -107,7 +107,7 @@
             // signupbtn
             // 
             this.signupbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.signupbtn.Font = new System.Drawing.Font("هشام غرناطة طبيعي", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.signupbtn.Font = new System.Drawing.Font("PT Bold Heading", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.signupbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.signupbtn.Location = new System.Drawing.Point(190, 474);
             this.signupbtn.Name = "signupbtn";
@@ -121,7 +121,7 @@
             // updateform
             // 
             this.updateform.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.updateform.Font = new System.Drawing.Font("هشام غرناطة طبيعي", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.updateform.Font = new System.Drawing.Font("PT Bold Heading", 15.75F);
             this.updateform.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.updateform.Location = new System.Drawing.Point(35, 345);
             this.updateform.Name = "updateform";
@@ -134,7 +134,7 @@
             // changepassbtn
             // 
             this.changepassbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.changepassbtn.Font = new System.Drawing.Font("هشام غرناطة طبيعي", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.changepassbtn.Font = new System.Drawing.Font("PT Bold Heading", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.changepassbtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(219)))), ((int)(((byte)(200)))));
             this.changepassbtn.Location = new System.Drawing.Point(35, 474);
             this.changepassbtn.Name = "changepassbtn";

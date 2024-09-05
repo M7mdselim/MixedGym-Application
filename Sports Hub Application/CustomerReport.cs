@@ -747,5 +747,10 @@ ORDER BY DateUpdated DESC";
         {
 
         }
+
+        private void transactionsGridView_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

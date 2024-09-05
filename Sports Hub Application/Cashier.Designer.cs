@@ -117,12 +117,12 @@
             // Headerlabel
             // 
             this.Headerlabel.AutoSize = true;
-            this.Headerlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 39.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.Headerlabel.Font = new System.Drawing.Font("PT Bold Heading", 33F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.Headerlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.Headerlabel.Location = new System.Drawing.Point(264, -5);
+            this.Headerlabel.Location = new System.Drawing.Point(258, -5);
             this.Headerlabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Headerlabel.Name = "Headerlabel";
-            this.Headerlabel.Size = new System.Drawing.Size(431, 61);
+            this.Headerlabel.Size = new System.Drawing.Size(398, 79);
             this.Headerlabel.TabIndex = 49;
             this.Headerlabel.Text = "الحركة اليومية لأنشطة";
             this.Headerlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -131,12 +131,12 @@
             // 
             this.namelabel.AutoEllipsis = true;
             this.namelabel.AutoSize = true;
-            this.namelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.namelabel.Font = new System.Drawing.Font("PT Bold Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.namelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.namelabel.Location = new System.Drawing.Point(760, 134);
+            this.namelabel.Location = new System.Drawing.Point(760, 128);
             this.namelabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.namelabel.Name = "namelabel";
-            this.namelabel.Size = new System.Drawing.Size(138, 31);
+            this.namelabel.Size = new System.Drawing.Size(125, 41);
             this.namelabel.TabIndex = 4;
             this.namelabel.Text = "اسم المشترك";
             this.namelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -144,12 +144,12 @@
             // idlabel
             // 
             this.idlabel.AutoSize = true;
-            this.idlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.idlabel.Font = new System.Drawing.Font("PT Bold Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.idlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.idlabel.Location = new System.Drawing.Point(791, 273);
+            this.idlabel.Location = new System.Drawing.Point(791, 266);
             this.idlabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.idlabel.Name = "idlabel";
-            this.idlabel.Size = new System.Drawing.Size(87, 31);
+            this.idlabel.Size = new System.Drawing.Size(88, 41);
             this.idlabel.TabIndex = 9;
             this.idlabel.Text = "الاقدميه";
             this.idlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -198,12 +198,12 @@
             // checknumberlabel
             // 
             this.checknumberlabel.AutoSize = true;
-            this.checknumberlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.checknumberlabel.Font = new System.Drawing.Font("PT Bold Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.checknumberlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.checknumberlabel.Location = new System.Drawing.Point(772, 179);
+            this.checknumberlabel.Location = new System.Drawing.Point(772, 171);
             this.checknumberlabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.checknumberlabel.Name = "checknumberlabel";
-            this.checknumberlabel.Size = new System.Drawing.Size(132, 31);
+            this.checknumberlabel.Size = new System.Drawing.Size(116, 41);
             this.checknumberlabel.TabIndex = 12;
             this.checknumberlabel.Text = "رقم الايصال";
             this.checknumberlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,12 +212,12 @@
             // 
             this.categorylabel.AutoEllipsis = true;
             this.categorylabel.AutoSize = true;
-            this.categorylabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.categorylabel.Font = new System.Drawing.Font("PT Bold Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.categorylabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.categorylabel.Location = new System.Drawing.Point(358, 134);
+            this.categorylabel.Location = new System.Drawing.Point(359, 128);
             this.categorylabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.categorylabel.Name = "categorylabel";
-            this.categorylabel.Size = new System.Drawing.Size(56, 31);
+            this.categorylabel.Size = new System.Drawing.Size(59, 41);
             this.categorylabel.TabIndex = 13;
             this.categorylabel.Text = "الفئه";
             this.categorylabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -253,12 +253,12 @@
             // 
             this.sportlabel.AutoEllipsis = true;
             this.sportlabel.AutoSize = true;
-            this.sportlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.sportlabel.Font = new System.Drawing.Font("PT Bold Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.sportlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.sportlabel.Location = new System.Drawing.Point(594, 179);
+            this.sportlabel.Location = new System.Drawing.Point(595, 175);
             this.sportlabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.sportlabel.Name = "sportlabel";
-            this.sportlabel.Size = new System.Drawing.Size(77, 31);
+            this.sportlabel.Size = new System.Drawing.Size(78, 41);
             this.sportlabel.TabIndex = 16;
             this.sportlabel.Text = "النشاط";
             this.sportlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -266,12 +266,12 @@
             // paidlabel
             // 
             this.paidlabel.AutoSize = true;
-            this.paidlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.paidlabel.Font = new System.Drawing.Font("PT Bold Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.paidlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.paidlabel.Location = new System.Drawing.Point(519, 228);
+            this.paidlabel.Location = new System.Drawing.Point(515, 219);
             this.paidlabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.paidlabel.Name = "paidlabel";
-            this.paidlabel.Size = new System.Drawing.Size(87, 31);
+            this.paidlabel.Size = new System.Drawing.Size(74, 41);
             this.paidlabel.TabIndex = 17;
             this.paidlabel.Text = "المدفوع";
             this.paidlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -379,12 +379,12 @@
             // 
             this.phonenumberlabel.AutoEllipsis = true;
             this.phonenumberlabel.AutoSize = true;
-            this.phonenumberlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.phonenumberlabel.Font = new System.Drawing.Font("PT Bold Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.phonenumberlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.phonenumberlabel.Location = new System.Drawing.Point(800, 226);
+            this.phonenumberlabel.Location = new System.Drawing.Point(800, 218);
             this.phonenumberlabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.phonenumberlabel.Name = "phonenumberlabel";
-            this.phonenumberlabel.Size = new System.Drawing.Size(83, 31);
+            this.phonenumberlabel.Size = new System.Drawing.Size(77, 41);
             this.phonenumberlabel.TabIndex = 21;
             this.phonenumberlabel.Text = "الموبيل";
             this.phonenumberlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -392,12 +392,12 @@
             // datentimelabel
             // 
             this.datentimelabel.AutoSize = true;
-            this.datentimelabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.datentimelabel.Font = new System.Drawing.Font("PT Bold Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.datentimelabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.datentimelabel.Location = new System.Drawing.Point(454, 275);
+            this.datentimelabel.Location = new System.Drawing.Point(452, 266);
             this.datentimelabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.datentimelabel.Name = "datentimelabel";
-            this.datentimelabel.Size = new System.Drawing.Size(156, 31);
+            this.datentimelabel.Size = new System.Drawing.Size(145, 41);
             this.datentimelabel.TabIndex = 22;
             this.datentimelabel.Text = "التاريخ والوقت";
             this.datentimelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -467,12 +467,12 @@
             // 
             this.noteslabel.AutoEllipsis = true;
             this.noteslabel.AutoSize = true;
-            this.noteslabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.noteslabel.Font = new System.Drawing.Font("PT Bold Heading", 17.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.noteslabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.noteslabel.Location = new System.Drawing.Point(781, 318);
+            this.noteslabel.Location = new System.Drawing.Point(781, 314);
             this.noteslabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.noteslabel.Name = "noteslabel";
-            this.noteslabel.Size = new System.Drawing.Size(117, 31);
+            this.noteslabel.Size = new System.Drawing.Size(96, 41);
             this.noteslabel.TabIndex = 26;
             this.noteslabel.Text = "الملاحظات";
             this.noteslabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -509,7 +509,7 @@
             this.addCustomerButton.StateCommon.Border.Width = 1;
             this.addCustomerButton.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.InactiveBorder;
             this.addCustomerButton.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.addCustomerButton.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.addCustomerButton.StateCommon.Content.ShortText.Font = new System.Drawing.Font("PT Bold Heading", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.addCustomerButton.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(146)))), ((int)(((byte)(197)))));
             this.addCustomerButton.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(122)))), ((int)(((byte)(206)))));
             this.addCustomerButton.StatePressed.Back.ColorAngle = 130F;
@@ -569,7 +569,7 @@
             this.serviceButton.StateCommon.Border.Width = 1;
             this.serviceButton.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.InactiveBorder;
             this.serviceButton.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.serviceButton.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.serviceButton.StateCommon.Content.ShortText.Font = new System.Drawing.Font("PT Bold Heading", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.serviceButton.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(146)))), ((int)(((byte)(197)))));
             this.serviceButton.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(122)))), ((int)(((byte)(206)))));
             this.serviceButton.StatePressed.Back.ColorAngle = 130F;
@@ -629,7 +629,7 @@
             this.backButton.StateCommon.Border.Width = 1;
             this.backButton.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.InactiveBorder;
             this.backButton.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.backButton.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.backButton.StateCommon.Content.ShortText.Font = new System.Drawing.Font("PT Bold Heading", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.backButton.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(146)))), ((int)(((byte)(197)))));
             this.backButton.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(122)))), ((int)(((byte)(206)))));
             this.backButton.StatePressed.Back.ColorAngle = 130F;
@@ -689,7 +689,7 @@
             this.btnImport.StateCommon.Border.Width = 1;
             this.btnImport.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnImport.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnImport.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.StateCommon.Content.ShortText.Font = new System.Drawing.Font("PT Bold Heading", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.btnImport.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(146)))), ((int)(((byte)(197)))));
             this.btnImport.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(122)))), ((int)(((byte)(206)))));
             this.btnImport.StatePressed.Back.ColorAngle = 130F;
@@ -749,7 +749,7 @@
             this.clearimagebtn.StateCommon.Border.Width = 1;
             this.clearimagebtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.clearimagebtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.clearimagebtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearimagebtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("PT Bold Heading", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.clearimagebtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(146)))), ((int)(((byte)(197)))));
             this.clearimagebtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(122)))), ((int)(((byte)(206)))));
             this.clearimagebtn.StatePressed.Back.ColorAngle = 130F;
@@ -832,7 +832,7 @@
             this.exportimgbtn.StateCommon.Border.Width = 1;
             this.exportimgbtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.exportimgbtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.exportimgbtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exportimgbtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("PT Bold Heading", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.exportimgbtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(146)))), ((int)(((byte)(197)))));
             this.exportimgbtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(122)))), ((int)(((byte)(206)))));
             this.exportimgbtn.StatePressed.Back.ColorAngle = 130F;
@@ -920,7 +920,7 @@
             this.kryptonButton1.StateCommon.Border.Width = 1;
             this.kryptonButton1.StateCommon.Content.ShortText.Color1 = System.Drawing.SystemColors.InactiveBorder;
             this.kryptonButton1.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.IndianRed;
-            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.kryptonButton1.StateCommon.Content.ShortText.Font = new System.Drawing.Font("PT Bold Heading", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.kryptonButton1.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(146)))), ((int)(((byte)(197)))));
             this.kryptonButton1.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(122)))), ((int)(((byte)(206)))));
             this.kryptonButton1.StatePressed.Back.ColorAngle = 130F;
@@ -974,15 +974,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Rockwell", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Schoolbook", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(44)))), ((int)(((byte)(87)))));
-            this.label1.Location = new System.Drawing.Point(358, 60);
+            this.label1.Location = new System.Drawing.Point(333, 67);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 36);
+            this.label1.Size = new System.Drawing.Size(243, 43);
             this.label1.TabIndex = 50;
             this.label1.Text = "Mixed GYM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // backbtn
             // 
@@ -1002,11 +1003,11 @@
             this.backbtn.OverrideDefault.Border.Rounding = 18;
             this.backbtn.OverrideDefault.Border.Width = 1;
             this.backbtn.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.backbtn.Size = new System.Drawing.Size(61, 38);
+            this.backbtn.Size = new System.Drawing.Size(61, 62);
             this.backbtn.StateCommon.Back.Color1 = System.Drawing.Color.Transparent;
             this.backbtn.StateCommon.Back.Color2 = System.Drawing.Color.Transparent;
             this.backbtn.StateCommon.Back.ColorAngle = 45F;
-            this.backbtn.StateCommon.Back.Image = global::Mixed_Gym_Application.Properties.Resources.Picture1513461;
+            this.backbtn.StateCommon.Back.Image = global::Mixed_Gym_Application.Properties.Resources.icons8_back_button_502;
             this.backbtn.StateCommon.Back.ImageStyle = ComponentFactory.Krypton.Toolkit.PaletteImageStyle.Stretch;
             this.backbtn.StateCommon.Border.Color1 = System.Drawing.Color.Transparent;
             this.backbtn.StateCommon.Border.Color2 = System.Drawing.Color.Transparent;
@@ -1083,23 +1084,23 @@
             this.Controls.Add(this.notestxt);
             this.Controls.Add(this.timetxt);
             this.Controls.Add(this.datetxt);
-            this.Controls.Add(this.datentimelabel);
             this.Controls.Add(this.mobilenumbertxt);
             this.Controls.Add(this.applyDiscountButton);
             this.Controls.Add(this.paidtxt);
-            this.Controls.Add(this.paidlabel);
             this.Controls.Add(this.sportcombo);
-            this.Controls.Add(this.categorylabel);
             this.Controls.Add(this.checknumbertxt);
             this.Controls.Add(this.membershiptxt);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.Headerlabel);
-            this.Controls.Add(this.sportlabel);
             this.Controls.Add(this.namelabel);
             this.Controls.Add(this.checknumberlabel);
             this.Controls.Add(this.phonenumberlabel);
             this.Controls.Add(this.idlabel);
             this.Controls.Add(this.noteslabel);
+            this.Controls.Add(this.sportlabel);
+            this.Controls.Add(this.categorylabel);
+            this.Controls.Add(this.paidlabel);
+            this.Controls.Add(this.datentimelabel);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(6);

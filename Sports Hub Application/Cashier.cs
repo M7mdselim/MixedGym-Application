@@ -423,12 +423,11 @@ namespace Mixed_Gym_Application
 
 
 
-
         private async Task UpdateSportPriceAsync(int sportID, string category)
         {
             string priceColumn;
 
-            // Use if-else instead of switch expression
+            // Determine which price column to use based on the category
             if (category == "عضو")
             {
                 priceColumn = "MemberPrice";
@@ -461,20 +460,30 @@ namespace Mixed_Gym_Application
                     {
                         await connection.OpenAsync();
                         object result = await command.ExecuteScalarAsync();
+
                         if (result != null && decimal.TryParse(result.ToString(), out decimal price))
                         {
+                            // Calculate VAT (assuming a 14% VAT rate)
+                            decimal vatAmount = price * 0.14M;
+                            decimal totalPriceWithVat = price + vatAmount;
+
                             // Ensure the label update is done on the UI thread
                             if (sportpricelistlabel.InvokeRequired)
                             {
                                 sportpricelistlabel.Invoke(new Action(() =>
                                 {
-                                    sportpricelistlabel.Text = "Total : " + price.ToString("F2");
+                                    // Update label to show only "Total Price = <total with VAT>"
+                                    sportpricelistlabel.Text = $"Total = {totalPriceWithVat:F2}";
                                 }));
                             }
                             else
                             {
-                                sportpricelistlabel.Text = "Total : " + price.ToString("F2");
+                                // Update label to show only "Total Price = <total with VAT>"
+                                sportpricelistlabel.Text = $"Total = {totalPriceWithVat:F2}";
                             }
+
+                            // Store original total price for use in discount logic
+                            originalTotalPrice = totalPriceWithVat;
                         }
                         else
                         {
@@ -488,6 +497,10 @@ namespace Mixed_Gym_Application
                 }
             }
         }
+
+
+
+
 
 
         private async Task<bool> CheckIfCheckNumberExistsAsync(string checkNumber)
@@ -1526,54 +1539,82 @@ ORDER BY DateUpdated DESC";
         private decimal originalTotalPrice; // Variable to store the original total price
         private decimal discountPercentage; // Variable to store the discount percentage
 
-        private async void applyDiscountButton_Click(object sender, EventArgs e)
+        private void applyDiscountButton_Click(object sender, EventArgs e)
         {
-            // Ensure that a valid price is displayed before applying a discount
-            if (string.IsNullOrWhiteSpace(sportpricelistlabel.Text) || !sportpricelistlabel.Text.Contains(":"))
+            try
             {
-                MessageBox.Show("Please select a sport and fetch its price before applying a discount.");
-                return;
-            }
+                // Check if the label has been set and is in the correct format
+                if (string.IsNullOrEmpty(sportpricelistlabel.Text) || !sportpricelistlabel.Text.StartsWith("Total = "))
+                {
+                    MessageBox.Show("Price details are not set or not in the expected format.");
+                    return;
+                }
 
-            decimal totalPrice;
-            // Try to parse the total price from the label text
-            if (!decimal.TryParse(sportpricelistlabel.Text.Split(':')[1].Trim(), out totalPrice))
+                // Extract the total price from the label
+                string totalPriceText = sportpricelistlabel.Text.Split('=')[1].Trim();
+
+                // Parse the total price (this should be the total with VAT)
+                if (!decimal.TryParse(totalPriceText, out decimal totalPriceWithVat))
+                {
+                    MessageBox.Show("Invalid total price format.");
+                    return;
+                }
+
+                decimal vatRate = 0.14M; // 14% VAT rate
+
+                // If a discount has already been applied, revert to the original price
+                if (isDiscountApplied)
+                {
+                    // Reset the price to the original value
+                    sportpricelistlabel.Text = $"Total = {originalTotalPrice:F2}";
+                    isDiscountApplied = false;
+                    MessageBox.Show("Discount has been removed. Price reset to the original value.");
+                    return;
+                }
+
+                // If no discount has been applied, proceed to apply a discount
+                if (originalTotalPrice == 0)
+                {
+                    // Store the original total price for future reference
+                    originalTotalPrice = totalPriceWithVat;
+                }
+
+                // To find the original price, we need to first extract the VAT.
+                decimal originalPrice = totalPriceWithVat / (1 + vatRate); // Total price = Original price + VAT
+
+                // Prompt for discount percentage
+                string discountInput = Microsoft.VisualBasic.Interaction.InputBox("Enter discount percentage (e.g., 20 for 20%):", "Apply Discount", "0");
+                if (!decimal.TryParse(discountInput, out discountPercentage) || discountPercentage < 0 || discountPercentage > 100)
+                {
+                    MessageBox.Show("Invalid discount percentage.");
+                    return;
+                }
+
+                // Calculate the discount amount based on the original price
+                decimal discountAmount = (originalPrice * discountPercentage) / 100;
+                decimal discountedPrice = originalPrice - discountAmount;
+
+                // Calculate VAT based on the original price
+                decimal vatAmount = originalPrice * vatRate; // 14% VAT
+
+                // Calculate the new total price (discounted price + VAT)
+                decimal newTotalPrice = discountedPrice + vatAmount;
+
+                // Update the label to reflect only the new total price
+                sportpricelistlabel.Text = $"Total Price = {newTotalPrice:F2}";
+
+                // Set the flag to indicate that a discount has been applied
+                isDiscountApplied = true;
+
+                MessageBox.Show($"Discount applied. New total price: {newTotalPrice:F2}");
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show("Invalid total price.");
-                return;
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
-
-            if (isDiscountApplied)
-            {
-                // Reset to the original total price if discount is applied
-                sportpricelistlabel.Text = "Total : " + originalTotalPrice.ToString("F2");
-                MessageBox.Show("Discount reset. Original total price restored.");
-                isDiscountApplied = false; // Reset the flag
-                return;
-            }
-
-            // Prompt for discount percentage
-            string discountInput = Microsoft.VisualBasic.Interaction.InputBox("Enter discount percentage (e.g., 20 for 20%):", "Apply Discount", "0");
-            if (!decimal.TryParse(discountInput, out discountPercentage) || discountPercentage < 0 || discountPercentage > 100)
-            {
-                MessageBox.Show("Invalid discount percentage.");
-                return;
-            }
-
-            // Store the original total price before applying the first discount
-            originalTotalPrice = totalPrice;
-
-            // Calculate the discount amount and the new total price
-            decimal discountAmount = (totalPrice * discountPercentage) / 100;
-            decimal discountedTotal = totalPrice - discountAmount;
-
-            // Update the total price label
-            sportpricelistlabel.Text = "Total : " + discountedTotal.ToString("F2");
-
-            MessageBox.Show($"Discount applied. New total price: {discountedTotal:0.00}");
-
-            isDiscountApplied = true; // Set the flag to true indicating the discount has been applied
         }
+
+
 
 
         public class ComboBoxItem

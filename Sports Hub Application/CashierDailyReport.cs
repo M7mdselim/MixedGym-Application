@@ -52,86 +52,87 @@ namespace Mixed_Gym_Application
             await LoadTransactionsAsync(selectedDate , CashierNametxt.Text);
         }
 
-      private async Task LoadTransactionsAsync(DateTime date, string username)
-{
-    string query = @"
-      SELECT 
+        private async Task LoadTransactionsAsync(DateTime date, string username)
+        {
+            string query = @"
+         SELECT 
         T.TransactionID,
         T.UserID,
         T.UserName,
         T.CheckNumber,
         T.SportName,
-        T.SportPrice,
+        T.SportPrice,  -- This column now reflects the correct price based on user category
         T.Category,
         T.MobileNumber,
         T.AmountPaid,
         T.RemainingAmount,
-        T.DiscountPercentage AS DiscountPercentage,
+        T.DiscountPercentage,
+        T.VATAmount,  -- Already calculated in the view
+        T.TotalPriceWithVAT,  -- Total price including VAT (with discount applied)
         T.DateAndTime,
         T.CashierName,
         T.Notes
     FROM 
         vw_TransactionReport T
     WHERE 
-        CAST(T.DateAndTime AS DATE) = @Date
+       CAST(T.DateAndTime AS DATE) = @Date
         AND T.CashierName = @Username
-
     UNION ALL
-
     SELECT 
         NULL AS TransactionID,
         NULL AS UserID,
         'Total' AS UserName,
         NULL AS CheckNumber,
         NULL AS SportName,
-        NULL AS SportPrice,
+       SUM(T.SportPrice) AS SportPrice,
         NULL AS Category,
         NULL AS MobileNumber,
         SUM(T.AmountPaid) AS AmountPaid,
         SUM(T.RemainingAmount) AS RemainingAmount,
         NULL AS DiscountPercentage,
+        SUM(T.VATAmount) AS VATAmount,  -- Sum VAT for the total row
+        SUM(T.TotalPriceWithVAT) AS TotalPriceWithVAT,  -- Sum TotalPriceWithVAT for the total row
         NULL AS DateAndTime,
         NULL AS CashierName,
         NULL AS Notes
     FROM 
         vw_TransactionReport T
     WHERE 
-        CAST(T.DateAndTime AS DATE) = @Date
-        AND T.CashierName = @Username;
+         CAST(T.DateAndTime AS DATE) = @Date
+        AND T.CashierName = @Username
 ";
 
-    using (SqlConnection connection = new SqlConnection(DatabaseConfig.connectionString))
-    {
-        using (SqlCommand command = new SqlCommand(query, connection))
-        {
-            command.Parameters.AddWithValue("@Date", date.Date);
-            command.Parameters.AddWithValue("@Username", username);
-
-            try
+            using (SqlConnection connection = new SqlConnection(DatabaseConfig.connectionString))
             {
-                await connection.OpenAsync();
-                using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    DataTable dataTable = new DataTable();
-                    dataTable.Load(reader);
-                    transactionsGridView.DataSource = dataTable;
+                    command.Parameters.AddWithValue("@Date", date.Date);
+                    command.Parameters.AddWithValue("@Username", username);
 
-                    // Optionally customize column headers
-                    transactionsGridView.Columns["UserName"].HeaderText = "User Name";
-                    transactionsGridView.Columns["SportName"].HeaderText = "Sport Name";
+                    try
+                    {
+                        await connection.OpenAsync();
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                        {
+                            DataTable dataTable = new DataTable();
+                            dataTable.Load(reader);
+                            transactionsGridView.DataSource = dataTable;
 
-                    // Ensure UserID column is hidden
-                    transactionsGridView.Columns["UserID"].Visible = false;
+                            // Optionally customize column headers
+                            transactionsGridView.Columns["UserName"].HeaderText = "User Name";
+                            transactionsGridView.Columns["SportName"].HeaderText = "Sport Name";
+
+                            // Ensure UserID column is hidden
+                            transactionsGridView.Columns["UserID"].Visible = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred while loading transactions: " + ex.Message);
+                    }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("An error occurred while loading transactions: " + ex.Message);
-            }
         }
-    }
-}
-
 
 
         private async void transactionsGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

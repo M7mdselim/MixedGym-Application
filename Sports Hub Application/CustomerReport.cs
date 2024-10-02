@@ -137,6 +137,17 @@ namespace Mixed_Gym_Application
         }
 
 
+        private void SetPictureBoxImage(Image newImage)
+        {
+            if (profileimg.Image != null)
+            {
+                profileimg.Image.Dispose();
+            }
+            profileimg.Image = newImage;
+        }
+
+
+
         private async Task SearchUserByNameAsync(string name)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -150,9 +161,9 @@ namespace Mixed_Gym_Application
             Debug.WriteLine($"Normalized Input: {normalizedInput}");
 
             string query = @"
-SELECT TOP 1 ID, Name, Category, MobileNumber, ProfileImage 
+SELECT ID, Mobilenumber, Name, Category, ProfileImage 
 FROM Users 
-WHERE dbo.NormalizeArabicText(Name) LIKE '%' + dbo.NormalizeArabicText(@Name) + '%'
+WHERE Name LIKE '%' + @Name + '%' OR dbo.NormalizeArabicText(Name) LIKE '%' + dbo.NormalizeArabicText(@Name) + '%'
 ORDER BY DateUpdated DESC";
 
             using (SqlConnection connection = new SqlConnection(DatabaseConfig.connectionString))
@@ -172,28 +183,27 @@ ORDER BY DateUpdated DESC";
                         {
                             if (await reader.ReadAsync())
                             {
-                                // Populate fields with user data
                                 string id = reader["ID"]?.ToString() ?? "N/A";
-                                string nameValue = reader["Name"]?.ToString() ?? "N/A";
+                                string mobileNumber = reader["Mobilenumber"]?.ToString() ?? "N/A";
+                                string names = reader["Name"]?.ToString() ?? "N/A";
                                 string category = reader["Category"]?.ToString() ?? "N/A";
-                                string mobileNumber = reader["MobileNumber"]?.ToString() ?? "N/A";
 
                                 if (InvokeRequired)
                                 {
                                     Invoke(new Action(() =>
                                     {
                                         membershipIDtxt.Text = id;
-                                        nametxt.Text = nameValue;
-                                        Categorytxt.Text = category;
                                         phonenumbertxt.Text = mobileNumber;
+                                        nametxt.Text = names;
+                                        Categorytxt.Text = category;
                                     }));
                                 }
                                 else
                                 {
                                     membershipIDtxt.Text = id;
-                                    nametxt.Text = nameValue;
-                                    Categorytxt.Text = category;
                                     phonenumbertxt.Text = mobileNumber;
+                                    nametxt.Text = names;
+                                    Categorytxt.Text = category;
                                 }
 
                                 byte[] imageData = reader["ProfileImage"] as byte[];
@@ -203,19 +213,22 @@ ORDER BY DateUpdated DESC";
                                     {
                                         using (MemoryStream ms = new MemoryStream(imageData))
                                         {
-                                            profileimg.Image = Image.FromStream(ms);
+                                            string tempFilePath = Path.GetTempFileName();
+                                            File.WriteAllBytes(tempFilePath, ms.ToArray());
+                                            SetPictureBoxImage(Image.FromFile(tempFilePath));
                                         }
                                     }
                                     catch (Exception ex)
                                     {
                                         MessageBox.Show("Failed to load image: " + ex.Message, "Image Load Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        profileimg.Image = null;
+                                        SetPictureBoxImage(null);
                                     }
                                 }
                                 else
                                 {
-                                    profileimg.Image = null;
+                                    SetPictureBoxImage(null);
                                 }
+
 
                                 // Set fields to read-only
                                 membershipIDtxt.ReadOnly = true;
@@ -233,17 +246,18 @@ ORDER BY DateUpdated DESC";
                     }
                     catch (SqlException ex)
                     {
-                        MessageBox.Show("A SQL error occurred: " + ex.Message, "SQL Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("A SQL error occurred: " + ex.Message);
                         Debug.WriteLine($"SQL Exception: {ex.Message}");
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("An error occurred: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("An error occurred: " + ex.Message);
                         Debug.WriteLine($"Exception: {ex.Message}");
                     }
                 }
             }
         }
+
 
 
         private void ResetUserFields()
@@ -444,7 +458,7 @@ ORDER BY DateUpdated DESC";
             }
         }
 
-        private void btnExportImage_Click_1(object sender, EventArgs e)
+        private void exportimgbtn_Click(object sender, EventArgs e)
         {
             // Check if there is an image in the PictureBox
             if (profileimg.Image != null)

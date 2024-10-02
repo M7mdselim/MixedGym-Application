@@ -10,6 +10,7 @@ using ComponentFactory.Krypton.Toolkit;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Reflection.Emit;
+using System.Diagnostics;
 
 
 namespace Mixed_Gym_Application
@@ -301,6 +302,11 @@ namespace Mixed_Gym_Application
         private void captionlabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Privatepool_Click(object sender, EventArgs e)
+        {
+            Process.Start(@"C:\Users\M7md Selim\Desktop\Setup PrivatePool\Private Pool Setup");
         }
     }
 }

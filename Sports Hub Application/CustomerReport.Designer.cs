@@ -176,7 +176,7 @@ namespace Mixed_Gym_Application
             this.btnExportImage.TabIndex = 12;
             this.btnExportImage.Text = "تحميل صورة";
             this.btnExportImage.UseVisualStyleBackColor = false;
-            this.btnExportImage.Click += new System.EventHandler(this.btnExportImage_Click_1);
+            this.btnExportImage.Click += new System.EventHandler(this.exportimgbtn_Click);
             // 
             // printButton
             // 

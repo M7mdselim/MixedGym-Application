@@ -1,0 +1,220 @@
+CREATE TABLE Transactions (
+    TransactionID INT PRIMARY KEY IDENTITY,
+    UserID INT  NOT NULL,
+    SportID INT FOREIGN KEY REFERENCES Sports(SportID),
+    AmountPaid DECIMAL(10, 2) NOT NULL,
+    RemainingAmount DECIMAL(10, 2) NOT NULL,
+    DateAndTime DATETIME DEFAULT GETDATE(),
+    CashierName NVARCHAR(255) NOT NULL,
+    DiscountPercentage DECIMAL(5, 2) CHECK (DiscountPercentage >= 0 AND DiscountPercentage <= 100) NULL
+);
+
+CREATE TABLE Sports (
+    SportID INT PRIMARY KEY IDENTITY,
+    SportName NVARCHAR(100),
+    MemberPrice DECIMAL(10, 2),
+    CivilianPrice DECIMAL(10, 2),
+    Degree1Price DECIMAL(10, 2),
+    MilitaryPrice DECIMAL(10, 2)
+);
+
+CREATE TRIGGER trg_Transactions_Insert
+ON SubscriptionsDB.dbo.Transactions
+AFTER INSERT
+AS
+BEGIN
+    -- Check if UserID exists in MixedGymDB.dbo.Users
+    IF EXISTS (
+        SELECT 1
+        FROM inserted i
+        LEFT JOIN MixedGymDB.dbo.Users u
+        ON i.UserID = u.UserID
+        WHERE u.UserID IS NULL
+    )
+    BEGIN
+        -- Raise an error if the UserID does not exist
+        RAISERROR('UserID does not exist in MixedGymDB.dbo.Users.', 16, 1);
+        ROLLBACK TRANSACTION;
+        RETURN;
+    END
+
+  
+    
+END;
+
+ALTER TABLE Transactions
+ADD Notes NVARCHAR(MAX);
+
+
+
+
+
+
+	Create PROCEDURE InsertTransaction
+    @UserID INT,
+    @SportID INT,
+    @AmountPaid DECIMAL(10, 2),
+    @DateAndTime DATETIME,
+    @CashierName NVARCHAR(255),
+    @DiscountPercentage DECIMAL(5, 2),
+    @Notes NVARCHAR(MAX),
+    @CheckNumber NVARCHAR(50) -- Added CheckNumber parameter
+AS
+BEGIN
+    -- Start a transaction
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Validate the discount percentage
+        IF @DiscountPercentage < 0 OR @DiscountPercentage > 100
+        BEGIN
+            THROW 50000, 'Discount percentage must be between 0 and 100.', 1;
+        END
+
+        -- Validate the amount paid
+        IF @AmountPaid < 0
+        BEGIN
+            THROW 50001, 'Amount paid cannot be negative.', 1;
+        END
+
+        DECLARE @Category NVARCHAR(50);
+        DECLARE @Price DECIMAL(10, 2);
+        DECLARE @DiscountAmount DECIMAL(10, 2);
+        DECLARE @DiscountedPrice DECIMAL(10, 2);
+        DECLARE @RemainingAmount DECIMAL(10, 2);
+
+        -- Get the user's category
+        SELECT @Category = Category 
+        FROM MixedGymDB.dbo.Users 
+        WHERE UserID = @UserID;
+
+        IF @Category IS NULL
+        BEGIN
+            THROW 50004, 'Invalid UserID.', 1;
+        END
+
+        -- Get the price of the sport based on the category
+        SELECT @Price = 
+            CASE 
+                WHEN @Category = 'عضو' THEN MemberPrice
+                WHEN @Category = 'مدني' THEN CivilianPrice
+                WHEN @Category = 'درجة 1' THEN Degree1Price
+                WHEN @Category = 'جيش' THEN MilitaryPrice
+                ELSE NULL
+            END
+        FROM Sports
+        WHERE SportID = @SportID;
+
+        IF @Price IS NULL
+        BEGIN
+            THROW 50002, 'Invalid SportID or Category.', 1;
+        END
+
+        -- Calculate the discount amount and discounted price
+        SET @DiscountAmount = (@Price * @DiscountPercentage) / 100;
+        SET @DiscountedPrice = @Price - @DiscountAmount;
+
+        -- Calculate the remaining amount
+        SET @RemainingAmount = @DiscountedPrice - @AmountPaid;
+
+        -- Insert the transaction
+        INSERT INTO Transactions 
+            (UserID, SportID, AmountPaid, RemainingAmount, DateAndTime, CashierName, DiscountPercentage, Notes, CheckNumber)
+        VALUES 
+            (@UserID, @SportID, @AmountPaid, @RemainingAmount, @DateAndTime, @CashierName, @DiscountPercentage, @Notes, @CheckNumber);
+
+        -- Commit the transaction
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        -- Rollback the transaction if any error occurs
+        ROLLBACK TRANSACTION;
+        -- Return the error message
+        THROW;
+    END CATCH
+END;
+
+ALTER TABLE Transactions
+ADD CheckNumber NVARCHAR(50);
+
+
+Create VIEW vw_TransactionReport AS
+SELECT 
+    T.TransactionID,
+    T.UserID,
+    U.Name AS UserName,
+    T.CheckNumber,
+    S.SportName,
+    CASE 
+        WHEN U.Category = 'عضو' THEN S.MemberPrice
+        WHEN U.Category = 'مدني' THEN S.CivilianPrice
+        WHEN U.Category = 'درجة 1' THEN S.Degree1Price
+        WHEN U.Category = 'جيش' THEN S.MilitaryPrice
+        ELSE NULL
+    END AS SportPrice,
+    U.Category,
+    U.MobileNumber,
+    T.AmountPaid,
+    T.RemainingAmount,
+    T.DiscountPercentage AS DiscountPercentage,
+    T.DateAndTime,
+    T.CashierName,
+    T.Notes
+FROM 
+    SubscriptionsDB.dbo.Transactions T
+JOIN 
+    MixedGymDB.dbo.Users U ON T.UserID = U.UserID
+JOIN 
+    Sports S ON T.SportID = S.SportID;
+
+
+CREATE FUNCTION dbo.NormalizeArabicText (@text NVARCHAR(MAX))
+RETURNS NVARCHAR(MAX)
+AS
+BEGIN
+    -- Replace different forms of Arabic characters with their normalized forms
+    RETURN REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+        @text,
+        N'أ', N'ا'),   -- Normalize 'أ' to 'ا'
+        N'إ', N'ا'),   -- Normalize 'إ' to 'ا'
+        N'آ', N'ا'),   -- Normalize 'آ' to 'ا'
+        N'ى', N'ي'),   -- Normalize 'ى' to 'ي'
+        N'ئ', N'ي'),   -- Normalize 'ئ' to 'ي'
+        N'ة', N'ه')    -- Normalize 'ة' to 'ه'
+END
+
+
+CREATE FUNCTION dbo.ReverseNormalizeArabicText (@text NVARCHAR(MAX))
+RETURNS NVARCHAR(MAX)
+AS
+BEGIN
+    -- Replace normalized characters with their original forms
+    RETURN REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(
+        @text,
+        N'ا', N'أ'),   -- Reverse normalize 'ا' to 'أ'
+        N'ا', N'إ'),   -- Reverse normalize 'ا' to 'إ'
+        N'ا', N'آ'),   -- Reverse normalize 'ا' to 'آ'
+        N'ي', N'ى'),   -- Reverse normalize 'ي' to 'ى'
+        N'ي', N'ئ'),   -- Reverse normalize 'ي' to 'ئ'
+        N'ه', N'ة')    -- Reverse normalize 'ه' to 'ة'
+END
+
+-------
+
+ 	WITH CTE AS (
+    SELECT 
+        TransactionID,
+        CheckNumber,
+        ROW_NUMBER() OVER (PARTITION BY [CheckNumber] ORDER BY [TransactionID]) AS row_num
+    FROM 
+        [MixedGymDB].[dbo].[Transactions]
+)
+
+		UPDATE CTE
+SET CheckNumber = REPLICATE('0', row_num - 1) + CheckNumber
+WHERE row_num > 1;
+
+
+
+ALTER TABLE [MixedGymDB].[dbo].[Transactions]
+ADD CONSTRAINT UQ_Transactions_CheckNumber UNIQUE ([CheckNumber]);

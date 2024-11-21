@@ -308,5 +308,25 @@ namespace Mixed_Gym_Application
         {
             Process.Start(@"C:\Users\M7md Selim\Desktop\Setup PrivatePool\Private Pool Setup");
         }
+
+        private void infobtn_Click(object sender, EventArgs e)
+        {
+            string developerInfo = "Developer Information:\n\n" +
+                                   "Name: Mohammed Selim\n\n" +
+                                   "Phone: 01155003537\n\n" +
+                                   "Email: mohammedselim323@gmail.com\n\n" +
+                                   "Description: This application is developed to manage Sport's Hub (Dar el Deyafa) transactions.\n\n" +
+                                   "Supervised by: Mohamed Aggour, Mohamed Elshahat.\n\n";
+
+            string copyrightNotice = "Copyright Notice:\n\n" +
+                                     "All content, design, and functionality of this application are protected by copyright laws. " +
+                                     "Any unauthorized reproduction, distribution, or use of any part of this application without explicit permission " +
+                                     "is unacceptable.\n\n" +
+                                     "Thank you for respecting intellectual property rights.";
+
+            string message = developerInfo + "\n" + copyrightNotice;
+
+            MessageBox.Show(message, "About the Application", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

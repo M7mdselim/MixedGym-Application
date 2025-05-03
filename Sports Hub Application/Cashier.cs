@@ -220,7 +220,7 @@ namespace Mixed_Gym_Application
             allSports.Clear();
             sportcombo.Items.Clear();
 
-            string query = "SELECT SportID, SportName FROM Sports";
+            string query = "SELECT SportID, SportName FROM Sports WHERE Active = 1";
 
             using (SqlConnection connection = new SqlConnection(ConnectionString))
             {

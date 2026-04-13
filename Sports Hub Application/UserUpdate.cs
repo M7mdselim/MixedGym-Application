@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClosedXML.Excel;
+using MixedGymProject;
 
 namespace Mixed_Gym_Application
 {
@@ -495,6 +496,15 @@ namespace Mixed_Gym_Application
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the new form
+            SportsForm sportsPage = new SportsForm();
+
+            // Show it as a dialog (pop-up) or just .Show()
+            sportsPage.Show();
         }
     }
 }

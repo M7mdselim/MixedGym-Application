@@ -192,6 +192,12 @@
     <Compile Include="ChangePass.Designer.cs">
       <DependentUpon>ChangePass.cs</DependentUpon>
     </Compile>
+    <Compile Include="SportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SportsForm.Designer.cs">
+      <DependentUpon>SportsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignUp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -267,6 +273,9 @@
     </Compile>
     <EmbeddedResource Include="ChangePass.resx">
       <DependentUpon>ChangePass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SportsForm.resx">
+      <DependentUpon>SportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>

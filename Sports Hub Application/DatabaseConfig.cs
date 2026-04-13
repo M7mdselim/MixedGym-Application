@@ -12,28 +12,34 @@ public static class DatabaseConfig
 
     private static void LoadSqlConfiguration()
     {
-        string configPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyApp", "config.txt");
+        // Path: C:\Users\zizo\AppData\Roaming\MyApp\config.txt
+        string folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "MyApp");
+        string configPath = Path.Combine(folderPath, "config.txt");
 
-        if (File.Exists(configPath))
+        if (!Directory.Exists(folderPath)) Directory.CreateDirectory(folderPath);
+
+        // --- DELETE OLD CONFIG FILE AUTOMATICALLY IF IT EXISTS ---
+        // This ensures we start fresh with your correct password "comsys@123"
+        // (You can remove this block later once it works)
+        if (!File.Exists(configPath) || File.ReadAllText(configPath).Contains("password_here"))
         {
-            var lines = File.ReadAllLines(configPath);
-            if (lines.Length >= 3)
-            {
-                string serverName = lines[0];
-                string username = lines[1];
-                string password = lines[2];
-             //connectionString = $"Data Source=DESKTOP-64N23O5;Initial Catalog=MixedGymDB;Integrated Security=True;Encrypt=False";
-                
-             connectionString = $"Data Source={serverName};Initial Catalog=MixedGymDB;User Id={username};Password={password};Encrypt=False";
-            }
-            else
-            {
-                throw new InvalidOperationException("The configuration file is invalid.");
-            }
+            File.WriteAllLines(configPath, new string[] { "192.168.50.5", "sa", "comsys@123" });
+        }
+
+        var lines = File.ReadAllLines(configPath);
+        if (lines.Length >= 3)
+        {
+            string serverName = lines[0].Trim();
+            string username = lines[1].Trim();
+            string password = lines[2].Trim();
+
+            // FORCE SQL AUTHENTICATION
+            // We specifically DO NOT use "Integrated Security=True" here.
+            connectionString = $"Data Source={serverName};Initial Catalog=MixedGymDB;User ID={username};Password={password};Encrypt=True;TrustServerCertificate=True;";
         }
         else
         {
-            throw new FileNotFoundException("The configuration file was not found.");
+            throw new InvalidOperationException("Config file is invalid.");
         }
     }
 }
